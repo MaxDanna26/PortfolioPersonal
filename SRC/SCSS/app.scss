@@ -1,0 +1,17 @@
+// BACKEND
+@import 'base/normalized';
+@import 'base/variables';
+@import 'base/utilidades';
+@import 'base/mixins';
+
+
+//FRONTEND
+@import 'contenido/header';
+@import 'contenido/navegacion';
+@import 'contenido/footer';
+@import 'contenido/seccionMedia';
+@import 'contenido/aboutme';
+@import 'contenido/skills';
+@import 'contenido/contact';
+@import 'contenido/proyects';
+

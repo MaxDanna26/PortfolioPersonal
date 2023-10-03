@@ -1,0 +1,29 @@
+header{
+display: flex;
+justify-content: space-between;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+color: #fff; /* Ajusta el color de texto a tu preferencia */
+z-index: 100; /* Asegura que el encabezado esté por encima del contenido */
+background: black;
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+}
+
+h1{
+    font-size: 1.5rem;
+    color: white;
+    margin-left: 3rem;
+}
+
+
+@media (min-width:811px) { 
+    header{
+    display: flex;
+    justify-content: row;} }

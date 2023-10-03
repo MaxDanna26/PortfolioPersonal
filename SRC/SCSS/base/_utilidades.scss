@@ -1,0 +1,31 @@
+*{
+    font-family: 'Anton', sans-serif;
+
+}
+
+.seccion-universal {
+    padding: 5rem;
+    background: white;
+    border: 1px solid rgba(34, 34, 34, 0.1);
+    border-radius: 2px;
+}
+
+.recuadro{
+    border: solid 0.1rem white;
+    padding: .5rem;
+    background-color: rgb(17, 77, 141);
+}
+
+
+.contenedor {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.centrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+

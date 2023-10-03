@@ -1,0 +1,48 @@
+.skills{
+    letter-spacing: 0.2rem;
+    font-size: 3rem;
+}
+
+.skill-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 10vh;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+  ul,li{
+    color: white;
+  }
+
+  .grid-icons{
+    display: flex;
+    flex-direction: row;
+        ul{
+            padding: 1rem;
+            list-style: none;
+            width: 60%;
+        }
+    li{ margin: none;
+        list-style: none;}
+    
+  }
+
+  
+@media (min-width:811px) {
+
+  .grid-icons{
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      ul{width: 90%;}
+      li{text-align: center;}
+  } 
+
+  .imagen-icons{
+    width: 50%;
+  }
+}
+

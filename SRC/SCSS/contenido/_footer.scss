@@ -1,0 +1,48 @@
+.footer{
+    background-color: black;
+}
+
+.nav-footer{  
+    display: flex;
+    justify-content: end;
+    gap: .5rem;
+    padding: 2rem;
+    color: black;
+
+        a {
+                color: white;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+}
+
+.nav-footer button{
+    color: white;
+}
+
+.seccion-redes{
+    display: flex;
+    justify-content:center;
+    padding: 1rem 0 0 0;
+
+}
+
+.icono-footer{
+    width: 48px;
+    height: 48px;
+}
+
+.icono-footer:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+    transform: 4s;
+}
+
+.copyright{
+    display: flex;
+    justify-content: center;
+    color: white;
+    }
+
+
+

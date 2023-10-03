@@ -1,0 +1,22 @@
+{
+  "name": "segundoproyecto",
+  "version": "1.0.0",
+  "description": "GULP,SASS y HTML",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch SRC/SCSS:build/css",
+    "css": "gulp css>"
+  },
+  "author": "Danna Maximiliano",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "plumber": "^0.4.8",
+    "sass": "^1.58.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
+}

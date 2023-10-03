@@ -1,0 +1,31 @@
+.p-contact {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: justify;
+  width: 80%;
+}
+
+.h2Contact {
+  color: #ea0f1e;
+}
+
+@media (min-width: 600px) {
+  .p-contact {
+    text-align: center;
+  }
+  .contenedorContact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 811px) {
+  .h2Contact {
+    padding: 10rem;
+  }
+}
+
+/*# sourceMappingURL=contact.css.map */
