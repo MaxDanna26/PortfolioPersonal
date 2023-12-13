@@ -362,7 +362,6 @@ h1 {
 @media (min-width: 811px) {
   header {
     display: flex;
-    justify-content: row;
   }
 }
 .fa-solid, .fas {
@@ -578,7 +577,7 @@ h2 {
   display: flex;
   text-align: center;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: bold;
   padding: 4.5rem;
   letter-spacing: 1px;
@@ -592,7 +591,7 @@ h3 {
   font-weight: bold;
   text-align: center;
   letter-spacing: 1px;
-  padding: 4rem;
+  padding: 5rem;
 }
 
 .imagen-personal {
@@ -608,6 +607,15 @@ h3 {
   padding: 1rem;
   text-align: justify;
   width: 80%;
+}
+
+.p-aboutmeContenedor {
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: justify;
 }
 
 .enlace {
@@ -630,6 +638,7 @@ h3 {
 @media (min-width: 600px) {
   h2 {
     text-align: center;
+    font-size: 5rem;
     padding: 9.3rem;
   }
   .imagen-personal {
@@ -640,6 +649,20 @@ h3 {
   .aboutme {
     display: flex;
     flex-direction: row;
+  }
+  .aboutme .p-aboutme {
+    width: 50%;
+  }
+  .aboutme .imagen-personal {
+    width: 40%;
+  }
+  .p-aboutmeContenedor {
+    color: white;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: justify;
   }
 }
 .skills {
@@ -686,6 +709,7 @@ ul, li {
   }
   .grid-icons li {
     text-align: center;
+    margin-bottom: 8px;
   }
   .imagen-icons {
     width: 50%;

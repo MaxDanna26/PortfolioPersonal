@@ -3,7 +3,7 @@ const abrir = document.querySelector("#abrir")
 const cerrar = document.querySelector("#cerrar")
 const boton = document.querySelector("#btn")
 const nosotros = document.querySelector("#nosotros-imagen")
-const copyright = document.getElementById("copyright")
+
 const fullStack = document.getElementById("h3")
 
 let date = new Date()
@@ -32,7 +32,7 @@ cerrar.addEventListener('click', () =>{
     nosotros.classList.remove('invisible')
 })
 
-const content = document.querySelector('.content');
+const content = document.getElementById('h3');
 let lastScrollTop = 0;
 
 document.addEventListener('scroll', () => {
@@ -47,5 +47,5 @@ document.addEventListener('scroll', () => {
   lastScrollTop = scrollTop;
 });
 
-
-copyright.innerHTML = `All Rights Reserved ${date.getFullYear()} &copy;`
+// const copyright = document.getElementById('copyright')
+// copyright.innerHTML = `All Rights Reserved ${date.getFullYear()} &copy;`;
