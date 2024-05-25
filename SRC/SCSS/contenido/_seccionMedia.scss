@@ -1,0 +1,38 @@
+.flex{
+    display: flex;
+    flex-direction:row;
+    margin: 1rem;
+    
+}
+
+.imagen-code{
+width: 60%;
+align-items: flex-end;
+
+}
+
+.scroll-container {
+    height: max-content; /* Altura suficiente para generar scroll */
+    overflow: hidden; /* Habilita el scroll en caso de contenido que exceda la altura */
+  }
+
+  .seccion-links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+
+  
+  @media (min-width:600px) {
+    .flex{
+      margin: 2rem;
+      padding: 2rem;
+  }
+
+    
+}

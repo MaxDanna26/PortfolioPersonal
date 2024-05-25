@@ -1,0 +1,126 @@
+.proyect{
+    padding: 3rem;
+}
+
+.link-web{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.imagen-link{
+    width: 100%;
+    border-radius: .4rem;
+}
+
+.link-web a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.skills-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    height: 10vh;
+    font-size: 3rem;
+    font-weight: bold;
+  }
+
+
+  .letter {
+    opacity: 0;
+    animation: appear 0.5s ease-in-out forwards;
+  }
+  
+  .letter:nth-child(1) { animation-delay: 0.5s; }
+  .letter:nth-child(2) { animation-delay: 1s; }
+  .letter:nth-child(3) { animation-delay: 1.5s; }
+  .letter:nth-child(4) { animation-delay: 2s; }
+  .letter:nth-child(5) { animation-delay: 2.5s; }
+  .letter:nth-child(6) { animation-delay: 3s; }
+  
+  @keyframes appear {
+    0% { opacity: 0; transform: translateX(-50%) scale(0); }
+    100% { opacity: 1; transform: translateX(0) scale(1); }
+  }
+
+  .line-animation {
+    position: relative;
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .line {
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: #ea0f1e;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .line-left {
+    left: 0;
+    animation: line-in-left 3s forwards;
+  }
+  
+  .line-right {
+    right: 0;
+    animation: line-in-right 3s forwards;
+  }
+  
+  @keyframes line-in-left {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes line-in-right {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .animated-text {
+    font-size: 36px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  @media (min-width:600px) {
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    .imagen-link{
+      height: 200px;
+    }
+
+}
+
+
+  @media (min-width:811px) {
+
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+    }
+
+    .imagen-link{
+      height: 200px;
+    }
+  }
+
