@@ -22,102 +22,212 @@
 </head>
 
 <body>
+
+    <header class="header">
+
+        <h1 >
+            <a class="titular" href="/HTML/index.html">Danna Max</a>
+        </h1>
+
+        <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+
+        <nav class="navegation" id="nav">
+            <div class="container-btn">
+                <button class="cerrar-menu" id="cerrar"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+            </div>
+            <ul class="navegation-list">
+                <a href="/HTML/index.html">Home</a>
+                <a href="/HTML/index.html#aboutme">About me</a>
+                <a href="/HTML/Proyectos.html">Proyects</a>
+                <a href="/HTML/skills.html">Skills</a>
+                <a href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing">CV</a>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="welcomeMsj">
+        <h2 class="animate__animated animate__bounceInLeft">I design & build digital products</h2>
+    </div>
+
     <main>
-            <header class="header">
+        <div id="aboutme" class="contenedor">    
 
-                <h1 >
-                    <a class="titular" href="/HTML/index.html">Danna Max</a>
-                </h1>
+            <img class="imagen-personal scroll-element" src="/build/IMG/fotoPerfilACT.jpeg" alt="Imagen Personal">
+            
+            <p class="p-aboutme scroll-element">
+                Me llamo Maximiliano Gaspar Danna y vivo en Barcelona. Soy un joven multicultural que ha vivido y trabajado en diferentes países de Europa, ya que me encanta viajar, la música y la fotografía amateur. Me considero una persona seria y comprometida, con muchas ganas y energias. Me gusta el orden, el compañerismo y, sobre todo, las buenas vibras!
+            </p>
 
-                <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+            <p id="aboutmeP" class="p-aboutme oculto">
+                Mi formación ha comenzado hace unos años y aún sigo en ello, realizándola de distintas maneras como bootcamps, modalidades e-learning y de forma presencial en institutos de Barcelona. Durante mis años de aprendizaje, he realizado funciones de programación, maquetación, diseño y desarrollo con estándares web, CSS, HTML, JavaScript, jQuery, maquetación multinavegador y multiplataforma. Además de frontend, también me he formado en construcción, diseño y desarrollo de bases de datos relacionales o no, conexiones SQL, lógicas de programación o de aplicaciones web, así como también en las buenas prácticas de código. ¡Y siempre pienso continuar formándome en este hermoso ámbito!
+                Por supuesto que estoy totalmente abierto a seguir aprendiendo, formándome y evolucionando, ya que creo que es esencial en este sector laboral y, además, porque quiero ser mejor profesional!
+            </p>
+        </div>
 
-                <nav class="navegation" id="nav">
-                    <div class="container-btn">
-                        <button class="cerrar-menu" id="cerrar"><i class="fa-sharp fa-solid fa-xmark"></i></button>
-                    </div>
-                    <ul class="navegation-list">
-                        <a href="/HTML/index.html">Home</a>
-                        <a href="/HTML/index.html#aboutme">About me</a>
-                        <a href="/HTML/Proyectos.html">Proyects</a>
-                        <a href="/HTML/skills.html">Skills</a>
-                        <a href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing">CV</a>
-                    </ul>
-                </nav>
-            </header>
+        <div class="flex-end">
+            <button id="btnAbout" class="btnAbout scroll-element">
 
-            <div class="welcomeMsj">
-                <h2 class="animate__animated animate__bounceInLeft">I design & build digital products</h2>
-            </div>
+            </button>
+        </div>
 
+        <div class="scroll-element">
+            <h3>
+                < Web Developer Education />
+            </h3>
+        </div>
 
-            <div id="aboutme" class="contenedor">    
+        <div class="scroll-element">
+            <div class="contenedor cardCert">
 
-                <img class="imagen-personal scroll-element" src="/build/IMG/fotoPerfilACT.jpeg" alt="Imagen Personal">
+                <p class="titleCard">
+                    Bootcamp:
+                </p>
+
+                <p class="titleCard">
+                    Full Stack Angular - 2023
+                </p>
+
+                <p class="pcard">
+                    Maquetacion de proyectos webs en distintos lenguajes enfocado a aprender ANGULAR, manejo de gitHub y base de datos relacionales.
+                </p>
                 
-                <p class="p-aboutme scroll-element">
-                    Me llamo Maximiliano Gaspar Danna y vivo en Barcelona (España). Soy un joven multicultural que ha vivido y trabajado en diferentes países de Europa, ya que me encanta viajar, la música y la fotografía amateur. Me considero una persona seria y comprometida, obstinada en querer terminar lo que se comienza. Me gusta el orden, el compañerismo y, sobre todo, las buenas vibras!
+                <div class="iconosCert">
+                    <a href="https://www.linkedin.com/in/maximiliano-danna-67b862266/details/education/1712490972755/single-media-viewer/?profileId=ACoAAEFENz8BunUIgOHbPXktp5dYTBxQwMRFVkY">
+                        <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
+                    </a>
+                    <a href="">
+                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#76f64c' ></box-icon>
+                    </a>
+                    <a href="https://github.com/MaxDanna26/PorfolioAngular_FullStack">
+                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
+                    </a>
+                </div>
+            </div>
+        </div>         <!-- fin de la card -->
+
+        <div class="scroll-element">
+            <div class="contenedor cardCert">
+
+                <p class="titleCard">
+                    Bootcamp:
                 </p>
 
-                <p id="aboutmeP" class="p-aboutme oculto">
-                    Mi formación ha comenzado hace unos pocos años por cuenta propia, en bootcamps de páginas reconocidas en Europa y luego he continuado mis estudios en Barcelona de forma presencial. Durante mis años de experiencia, he realizado funciones de programación, maquetación, diseño y desarrollo con estándares web, CSS, HTML, JavaScript, jQuery, maquetación multinavegador (Internet Explorer, Firefox, Opera, Chrome, Safari, etc.) y multiplataforma (PC, telefonía móvil, tablets, etc.). Además de frontend, también me he formado en construcción, diseño y desarrollo de bases de datos relacionales o no, conexiones SQL, lógicas de programación o de aplicaciones web, así como también en las buenas prácticas de código. ¡Y siempre pienso continuar formándome en este hermoso ámbito! 
-                    Por supuesto que estoy totalmente abierto a seguir aprendiendo, formandome y evolucionar ya que creo que es escensial
-                    en este sector laboral y ademas porque quiero ser mejor profesional!
+                <p class="titleCard">
+                    Php y BDDD - 2023
                 </p>
+
+                <p class="pcard">
+                    Conocimientos de bases de datos, diseño, manipulación de datos, desarrollo web dinámico, transacciones, vistas, y optimización.
+                </p>
+                
+                <div class="iconosCert">
+                    <a href="https://www.linkedin.com/in/maximiliano-danna-67b862266/details/education/1712491216560/single-media-viewer/?profileId=ACoAAEFENz8BunUIgOHbPXktp5dYTBxQwMRFVkY">
+                        <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
+                    </a>
+                    <a href="">
+                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#76f64c' ></box-icon>
+                    </a>
+                    <a href="https://github.com/MaxDanna26/ProyectoFinal_PHPyBDD">
+                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
+                    </a>
+                </div>
             </div>
+        </div>         <!-- fin de la card -->
 
-            <div class="flex-end">
-                <button id="btnAbout" class="btnAbout scroll-element">
+        <div class="scroll-element">
+            <div class="contenedor cardCert">
 
-                </button>
+                <p class="titleCard">
+                    Certificado:
+                </p>
+
+                <p class="titleCard">
+                    Azure Fundamentals - 2023
+                </p>
+
+                <p class="pcard">
+                    Conocimiento de nivel básico de los servicios en la nube y cómo se brindan esos servicios con Microsoft Azure.
+                </p>
+                
+                <div class="iconosCert">
+                    <a href="https://www.credly.com/badges/5fe75ab4-b558-4b74-95bd-06b06d7c4a3a/linked_in_profile">
+                        <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
+                    </a>
+                    <a href="https://learn.microsoft.com/es-es/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification">
+                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#76f64c' ></box-icon>
+                    </a>
+                </div>
             </div>
+        </div>         <!-- fin de la card -->
 
-            <div class="contenedor scroll-element">
-                <p class="p-aboutme">Puedes saber mas acerca de mi biografia, experiencia, educacion y habilidades en el PDF de aqui debajo: </p>
+        <div class="scroll-element">
+            <div class="contenedor cardCert">
 
-                <img src="/SVG/descargar.svg" alt="Logo Descargar">
-                <a class="enlace" href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing" download>
-                    Pinchame!</a>
+                <p class="titleCard">
+                    Bootcamp:
+                </p>
+
+                <p class="titleCard">
+                    Full Stack C# y .Net - 2023
+                </p>
+
+                <p class="pcard">
+                    Fundamentos de programacion orientada a objetos con C# y .NET, git control de versiones, desarrollo web estático, bases de datos SQL y Frontend.
+                </p>
+                
+                <div class="iconosCert">
+                    <a href="">
+                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#76f64c' ></box-icon>
+                    </a>
+                    <a href="https://github.com/MaxDanna26/WindowsForms_FundacionSplai">
+                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
+                    </a>
+                </div>
             </div>
+        </div>         <!-- fin de la card -->
+
+        <div class="contenedor scroll-element">
+            <p class="p-aboutme">Puedes saber mas acerca de mi biografia, experiencia, educacion y habilidades en el PDF de aqui debajo: </p>
+
+            <box-icon type='solid' name='down-arrow-square'></box-icon>
+            <img width="30%" src="/SVG/descargar.svg" alt="Logo Descargar">
+            <a class="enlacePinchame" href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing" download>
+                Pinchame!</a>
+        </div>
 
     </main>
     
-        <br id="contact">
+    <br id="contact">
 
-        <div class="scroll-element">
-                <h3 class="">Web Developer Junior</h3>
+    <div class="flex">
+        <div class="seccion-links">
+            <a class="enlace" href="/HTML/Proyectos.html#proyect">Portfolio</a>
+            <a class="enlace" href="/HTML/skills.html">Skills</a>
+            <a class="enlace" href="/HTML/contact.html">Contact</a>
         </div>
 
-        <div class="flex">
-            <div class="seccion-links">
-                <a class="enlace" href="/HTML/Proyectos.html#proyect">Portfolio</a>
-                <a class="enlace" href="/HTML/skills.html">Skills</a>
-                <a class="enlace" href="/HTML/contact.html">Contact</a>
-            </div>
+        <img class="imagen-code" src="/build/IMG/code.jpg" alt="Imagen de Coding">
+    </div>
 
-            <img class="imagen-code" src="/build/IMG/code.jpg" alt="Imagen de Coding">
+
+    <footer class="footer">
+        <div class="seccion-redes">
+            <a href="mailto:maximilianodanna@hotmail.com?subject=Contratarme!&body="><img class="icono-footer" src="/SVG/correo.svg" alt="Icono email"></a>
+
+            <a href="https://www.instagram.com/maximilianodanna/"><img class="icono-footer" src="/SVG/instagram.svg" alt="Icono Instagram"></a>
+
+            <a href="https://es.linkedin.com/in/maximiliano-danna-67b862266?trk=people-guest_people_search-card"><img class="icono-footer" src="/SVG/linkedlin.svg" alt="Icono Linkedlin"></a>
+
+            <a href="https://www.facebook.com/Max.Danna23"><img class="icono-footer" src="/SVG/facebook.svg" alt="Icono Facebook"></a>
+
+            <a href="https://github.com/maxdanna26"><img class="icono-footer" src="/SVG/github.svg" alt="Icono Instagram"></a>
+            <a href=""></a>
+        </div>
         </div>
 
-
-
-        <footer class="footer">
-            <div class="seccion-redes">
-                <a href="mailto:maximilianodanna@hotmail.com?subject=Contratarme!&body="><img class="icono-footer" src="/SVG/correo.svg" alt="Icono email"></a>
-    
-                <a href="https://www.instagram.com/maximilianodanna/"><img class="icono-footer" src="/SVG/instagram.svg" alt="Icono Instagram"></a>
-    
-                <a href="https://es.linkedin.com/in/maximiliano-danna-67b862266?trk=people-guest_people_search-card"><img class="icono-footer" src="/SVG/linkedlin.svg" alt="Icono Linkedlin"></a>
-    
-                <a href="https://www.facebook.com/Max.Danna23"><img class="icono-footer" src="/SVG/facebook.svg" alt="Icono Facebook"></a>
-    
-                <a href="https://github.com/maxdanna26"><img class="icono-footer" src="/SVG/github.svg" alt="Icono Instagram"></a>
-                <a href=""></a>
-            </div>
-            </div>
-    
-            <p class="copyright">Todos los derechos reservados 2023 &copy;</p>
-            <br>
-        </footer>
-</div>
+        <p class="copyright">Todos los derechos reservados 2023 &copy;</p>
+        <br>
+    </footer>
 
 <script src="/SRC/JS/main.js"></script>
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>

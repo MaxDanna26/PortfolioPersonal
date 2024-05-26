@@ -19,7 +19,7 @@ btnAbout.addEventListener('click', () => {
     btnAbout.textContent = "Leer mas ..."
   else if(btnAbout.textContent == "Leer mas ...")
     btnAbout.textContent = "Leer menos ...";
-  toggleClass(aboutmeP, "oculto");
+  toggleClass(aboutmeP, "oculto");  
 });
 
 // Llamo a la funcion para mostrar/ocultar el menú de navegación

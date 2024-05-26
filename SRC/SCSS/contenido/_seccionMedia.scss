@@ -2,13 +2,50 @@
     display: flex;
     flex-direction:row;
     margin: 1rem;
-    
 }
 
 .imagen-code{
 width: 60%;
 align-items: flex-end;
+}
 
+.cardCert{
+  word-wrap: break-word;
+  background-color: #fffffff5; /* Color de fondo por defecto */
+  background-clip: border-box;
+  border-radius: x;
+  border: 1px solid #666;
+  border-radius: 4px 4px 4px 4px;
+  -webkit-box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
+  -moz-box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
+  box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
+  text-align: center;
+  width: 85%;
+}
+
+.titleCard{
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0.5rem;
+}
+
+.pcard{
+  color: black;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+}
+
+.iconosCert{
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.iconoCert{
+  scale: 2;
+  margin-bottom: 1.5rem;
 }
 
 .seccion-links{

@@ -18,17 +18,19 @@
 
     background: rgba( 53, 52, 52, 0.75 );
     box-shadow: 0 8px 32px 0 #6f8d2269;
-    backdrop-filter: blur( 20px );
+    backdrop-filter: blur( 10px );
     -webkit-backdrop-filter: blur( 20px );
-    border-radius: 10px 0 0 0;
+
+    border-radius: 5px 0 0 0;
+
     border-left: 1px solid rgba( 255, 255, 255, 0.18 );
     border-top: 1px solid rgba( 255, 255, 255, 0.18 );
     border-bottom: 1px solid rgba( 255, 255, 255, 0.18 );
     
     box-shadow: 0 0 0 100vmax rgba(53, 52, 52, 0.6);
-    padding: 1.2rem;
+    padding: 0.5rem;
 
-    width: 150px;
+    width: 40%;
 }
 .navegation.visible {
     visibility: visible;
