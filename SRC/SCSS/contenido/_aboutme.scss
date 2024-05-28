@@ -36,7 +36,7 @@ h3{
     font-weight: bold;
     text-align: center;
     letter-spacing: 2px;
-    padding: 3rem 2rem 4rem 2rem;
+    padding: 3rem 2rem 0 2rem;
 }
 
 .imagen-personal{
@@ -101,8 +101,16 @@ h3{
     transition: font-size 0.2s;
 }
 
+.mediaContent{
+    display: flex;
+    flex-direction: column;
+}
 
 @media (min-width:600px) {
+
+    .p-aboutme{
+        line-height: 1.5rem;
+    }
 
     h2{
         text-align: center;
@@ -110,32 +118,35 @@ h3{
         padding: 9.3rem;
     }
 
-    .imagen-personal{
-        width: 40%;
-        border-radius: 60%;
-        padding: 2rem;
+    h3{
+        padding-bottom: 0;
+        margin-bottom: 0;
     }
 
-    .aboutme{
+    .cardCert{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    #aboutme,.contenedor{
         display: flex;
         flex-direction: row;
-
-        .p-aboutme{
-            width: 50%;
-        }
+        gap: 1rem;
+        width: 95%;
 
         .imagen-personal{
-            width: 40%;
+            width: 25%;
         }
-    }
 
-    .p-aboutmeContenedor{
-        color: white;
-        font-size: 1.2rem;
-        line-height: 1.8rem;
-        margin: 1rem;
-        padding: 1rem;
-        text-align: justify;
+        .p-aboutme{
+            margin: 8px 8px;
+            padding: 2px 2px;
+        }
+
+
     }
     
 }

@@ -9,6 +9,16 @@ width: 60%;
 align-items: flex-end;
 }
 
+.contenedorCard{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-items: center;
+  padding: 0 1rem;
+  margin: 0 1rem;
+}
+
 .cardCert{
   word-wrap: break-word;
   background-color: #fffffff5; /* Color de fondo por defecto */
@@ -20,7 +30,6 @@ align-items: flex-end;
   -moz-box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
   box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
   text-align: center;
-  width: 85%;
 }
 
 .titleCard{
@@ -39,7 +48,7 @@ align-items: flex-end;
 
 .iconosCert{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -58,13 +67,33 @@ align-items: flex-end;
   padding: 1rem;
 }
 
+.iconoPinchame{
+  scale: 2.4;
+  margin: 1rem;
+}
 
   
   @media (min-width:600px) {
+
     .flex{
       margin: 2rem;
       padding: 2rem;
   }
 
-    
+  .contenedorCard{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1rem;
+    margin: 0 1.4rem 0 1.4rem;
+  }
+
+  .cardCert{
+    margin: 0 1rem 0 1rem;
+    padding: 1rem;
+  }
+  
+  .flexrow{
+    display: flex;
+    flex-direction: column;
+  }
 }
