@@ -204,36 +204,38 @@
     </main>
 
     <div class="flex">
-        <div class="seccion-links">
-            <a class="enlace" href="/HTML/Proyectos.html#proyect">Portfolio</a>
-            <a class="enlace" href="/HTML/skills.html">Skills</a>
-        </div>
-
         <img class="imagen-code" src="/build/IMG/code.jpg" alt="Imagen de Coding">
+
+        <div class="seccion-links">
+            <h3>Proyectos: </h3>
+            <a class="enlace" href="/HTML/Proyectos.html#proyect">Portfolio</a>
+        </div>
     </div>
     
     <br id="contact">
 
     <!-- MODIFICAR ESTE CONTACT POR UN FORMULARIO -->
 
-    <section id="contact" class="contenedor">
+    <section class="contenedor">
         
         <h2 class="h2Contact scroll-element animate__animated animate__tada">Let's make something great!</h2>
 
-        <form class="contact-form  scroll-element" action="process_form.php" method="post">
+        <form id="contactForm" class="contact-form  scroll-element">
 
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
+            <input placeholder="Nombre" type="text" id="name" name="name">
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <input placeholder="Correo Electronico" type="email" id="email" name="email">
 
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea placeholder="Exprésate Tranquilo!" id="message" name="message" rows="5"></textarea>
 
-            <button class="btnAbout" type="submit">Enviar</button>
         </form>
+
+        <div class="contenedor">
+            <a href="mailto:maximilianodanna@hotmail.com?subject=Consulta%20de%20Portafolio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tu%20trabajo."><button class="btnAbout">Enviar</button></a>
+        </div>
+
     </section>
+
 
     <footer class="footer">
         <div class="seccion-redes">
@@ -254,9 +256,9 @@
         <br>
     </footer>
 
-<script src="/SRC/JS/main.js"></script>
-<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="/SRC/JS/main.js"></script>
 </body>
 
 </html>

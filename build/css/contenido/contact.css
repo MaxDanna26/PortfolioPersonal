@@ -16,7 +16,7 @@
   font-size: 3rem;
   font-weight: bold;
   letter-spacing: 1px;
-  margin: 2rem;
+  margin: 1rem 2rem;
   padding: 1rem;
 }
 
@@ -25,11 +25,6 @@
   margin: 0 auto;
   padding: 1em;
   border-radius: 5px;
-}
-
-.contact-form label {
-  margin-bottom: 0.5em;
-  color: white;
 }
 
 .contact-form input, .contact-form textarea {
