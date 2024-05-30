@@ -3,7 +3,10 @@ const abrir = document.querySelector("#abrir")
 const cerrar = document.querySelector("#cerrar")
 const boton = document.querySelector("#btn")
 
-let date = new Date()
+// Obtiene el año actual
+const año = new Date().getFullYear();
+// Selecciona el elemento <span> con id "year" y actualiza su contenido
+document.getElementById('year').textContent = año;
 
 // Función para alternar una clase en un elemento
 function toggleClass(element, className) {
