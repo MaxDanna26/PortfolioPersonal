@@ -559,7 +559,7 @@ h1 {
   border-radius: x;
   border: 1px solid #666;
   border-radius: 4px 4px 4px 4px;
-  margin: 1rem 0;
+  margin: 0 2rem;
   -webkit-box-shadow: 4px 3px 11px -1px rgb(255, 255, 255);
   -moz-box-shadow: 4px 3px 11px -1px rgb(255, 255, 255);
   box-shadow: 4px 3px 11px -1px rgb(255, 255, 255);
@@ -594,6 +594,46 @@ h1 {
   -webkit-box-shadow: -1px -1px 15px 0px rgba(15, 15, 15, 0.5);
   -moz-box-shadow: -1px -1px 15px 0px rgba(15, 15, 15, 0.5);
   box-shadow: -1px -1px 15px 0px rgba(15, 15, 15, 0.5);
+}
+
+.carousel {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  display: block;
+  margin: 0 2rem; /* Centra horizontalmente el carrusel */
+}
+
+.carousel-inner {
+  display: flex;
+  margin: 1.4rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
 }
 
 .iconoCert:hover {
@@ -635,6 +675,9 @@ h1 {
   .imagen-code {
     width: 70%;
     margin: 1rem;
+  }
+  .carousel-item {
+    padding: 1rem;
   }
 }
 body {

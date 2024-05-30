@@ -39,7 +39,6 @@
                 <a href="/HTML/index.html">Home</a>
                 <a href="/HTML/index.html#aboutme">About me</a>
                 <a href="/HTML/Proyectos.html">Proyects</a>
-                <a href="/HTML/skills.html">Skills</a>
                 <a href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing">CV</a>
             </ul>
         </nav>
@@ -100,7 +99,7 @@
                         <a href="https://www.linkedin.com/in/maximiliano-danna-67b862266/details/education/1712490972755/single-media-viewer/?profileId=ACoAAEFENz8BunUIgOHbPXktp5dYTBxQwMRFVkY">
                             <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
                         </a>
-                        <a href="">
+                        <a href="https://www.red.es/es/actualidad/noticias/conoce-e-inscribete-los-cursos-de-talento-digital-para-jovenes-y-personas">
                             <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
                         </a>
                         <a href="https://github.com/MaxDanna26/PorfolioAngular_FullStack">
@@ -129,7 +128,7 @@
                         <a href="https://www.linkedin.com/in/maximiliano-danna-67b862266/details/education/1712491216560/single-media-viewer/?profileId=ACoAAEFENz8BunUIgOHbPXktp5dYTBxQwMRFVkY">
                             <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
                         </a>
-                        <a href="">
+                        <a href="https://pimecformacio.org/es/">
                             <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
                         </a>
                         <a href="https://github.com/MaxDanna26/ProyectoFinal_PHPyBDD">
@@ -181,18 +180,44 @@
                     </p>
                     
                     <div class="iconosCert">
-                        <a href="">
+                        <a href="https://fundacionesplai.org/programa/formacion-tic-e-insercion-laboral/">
                             <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
                         </a>
                         <a href="https://github.com/MaxDanna26/WindowsForms_FundacionSplai">
-                        <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
+                            <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>         <!-- fin de la card -->
+
+            <div class="scroll-element">
+                <div class="cardCert">
+    
+                    <p class="titleCard">
+                        Escuela:
+                    </p>
+    
+                    <p class="titleCard">
+                        42 Barcelona - 2024
+                    </p>
+    
+                    <p class="pcard">
+                        Fundamentos de programacion con C, git, softskills y examenes semanales para ingresar a la escuela 42 reconocida en toda Europa creada por la compañia Telefonica.
+                    </p>
+                    
+                    <div class="iconosCert">
+                        <a href="https://www.42barcelona.com/es">
+                            <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
+                        </a>
+                        <a href="https://github.com/MaxDanna26/42Barcelona">
+                            <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
                         </a>
                     </div>
                 </div>
             </div>         <!-- fin de la card -->
         </div>
 
-        <div class="contenedor flexrow scroll-element">
+        <div style="margin: 2rem 0;" class="contenedor scroll-element">
 
             <p class="p-aboutme">Puedes saber mas acerca de mi biografia, experiencia, educacion y habilidades en el PDF de aqui :</p>
             
@@ -203,37 +228,41 @@
 
     </main>
 
-    <div class="flex">
-        <div class="seccion-links">
-            <a class="enlace" href="/HTML/Proyectos.html#proyect">Portfolio</a>
-            <a class="enlace" href="/HTML/skills.html">Skills</a>
+    <div class="contenedor">
+
+        <img class="scroll-element imagen-code" src="/build/IMG/code.jpg" alt="Imagen de Coding">
+
+        <div class="divPortofolio">
+            <h4>No te vayas sin visitar mis proyectos realizados:</h4>
+            <button class="btnAbout"><a class="enlace" href="/HTML/Proyectos.html#proyect">Portfolio</a></button>
         </div>
 
-        <img class="imagen-code" src="/build/IMG/code.jpg" alt="Imagen de Coding">
     </div>
     
     <br id="contact">
 
-    <!-- MODIFICAR ESTE CONTACT POR UN FORMULARIO -->
-
-    <section id="contact" class="contenedor">
+    <section class="contenedor">
         
-        <h2 class="h2Contact scroll-element animate__animated animate__tada">Let's make something great!</h2>
+        <h2 class="h2Contact scroll-element animate__animated animate__tada">
+            Let's make something great!
+        </h2>
 
-        <form class="contact-form  scroll-element" action="process_form.php" method="post">
+        <form id="contactForm" onsubmit="enviarCorreo(); return false;" class="contact-form  scroll-element">
 
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
+            <input placeholder="Nombre" type="text" id="name" name="name">
 
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
+            <input placeholder="Asunto" type="text" id="subject" name="subject">
 
-            <label for="message">Mensaje:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
+            <textarea placeholder="Exprésate Tranquilo!" id="message" name="message" rows="5"></textarea>
 
-            <button class="btnAbout" type="submit">Enviar</button>
+            <div class="contenedor">
+                <a href="mailto:maximilianodanna@hotmail.com?subject=Consulta%20de%20Portafolio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tu%20trabajo."><button class="btnAbout">Enviar</button></a>
+            </div>
+
         </form>
+
     </section>
+
 
     <footer class="footer">
         <div class="seccion-redes">
@@ -250,13 +279,13 @@
         </div>
         </div>
 
-        <p class="copyright">Todos los derechos reservados 2023 &copy;</p>
+        <p class="copyright">Todos los derechos reservados<span id="year"></span>&copy;</p>
         <br>
     </footer>
 
-<script src="/SRC/JS/main.js"></script>
-<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script src="/SRC/JS/main.js"></script>
 </body>
 
 </html>

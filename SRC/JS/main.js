@@ -69,3 +69,36 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', revealOnScroll);
   revealOnScroll(); // Para verificar la visibilidad inicial
 });
+
+const prevButton = document.querySelector('.carousel-control.prev');
+const nextButton = document.querySelector('.carousel-control.next');
+const carouselInner = document.querySelector('.carousel-inner');
+let currentIndex = 0;
+
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+    }
+});
+
+nextButton.addEventListener('click', () => {
+    if (currentIndex < carouselInner.children.length - 1) {
+        currentIndex++;
+        updateCarousel();
+    }
+});
+
+function updateCarousel() {
+    const offset = -currentIndex * 100;
+    carouselInner.style.transform = `translateX(${offset}%)`;
+    updateOpacity();
+}
+
+function updateOpacity() {
+    for (let i = 0; i < carouselInner.children.length; i++) {
+        carouselInner.children[i].style.opacity = (i === currentIndex) ? '1' : '0.5';
+    }
+}
+
+updateOpacity();
