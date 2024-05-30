@@ -30,7 +30,7 @@
     box-shadow: 0 0 0 100vmax rgba(53, 52, 52, 0.6);
     padding: 0.5rem;
 
-    width: 40%;
+    width: 45%;
 }
 .navegation.visible {
     visibility: visible;
@@ -61,6 +61,8 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
 }
 .navegation-list li {
     text-align: center;
