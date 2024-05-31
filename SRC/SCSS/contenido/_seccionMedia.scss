@@ -77,12 +77,12 @@ width: 100%;
 
 .carousel-inner {
   display: flex;
-  margin: 1.4rem;
+  margin: 1rem;
   transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  min-width: 100%;
+  min-width: fit-content;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -131,6 +131,10 @@ width: 100%;
       padding: 2rem;
   }
 
+  main{
+    margin-left: 2rem;
+  }
+
   .contenedorCard{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -139,9 +143,7 @@ width: 100%;
   }
 
   .cardCert{
-    margin: 2rem 1rem 2rem 1rem;
-    padding: 1rem;
-
+    padding: 2rem;
   }
   
   .flexrow{
@@ -155,7 +157,13 @@ width: 100%;
   }
 
   .carousel-item{
-    padding: 1rem;
+    margin: 1rem;
+    inline-size: max-content;
+  }
+
+  .p-card{
+    text-align: center;
+    word-wrap: break-word;
   }
   
 }

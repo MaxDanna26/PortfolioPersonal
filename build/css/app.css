@@ -606,12 +606,12 @@ h1 {
 
 .carousel-inner {
   display: flex;
-  margin: 1.4rem;
+  margin: 1rem;
   transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-  min-width: 100%;
+  min-width: fit-content;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -658,6 +658,9 @@ h1 {
     margin: 2rem;
     padding: 2rem;
   }
+  main {
+    margin-left: 2rem;
+  }
   .contenedorCard {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -665,8 +668,7 @@ h1 {
     margin: 0 1.4rem 0 1.4rem;
   }
   .cardCert {
-    margin: 2rem 1rem 2rem 1rem;
-    padding: 1rem;
+    padding: 2rem;
   }
   .flexrow {
     display: flex;
@@ -677,7 +679,12 @@ h1 {
     margin: 1rem;
   }
   .carousel-item {
-    padding: 1rem;
+    margin: 1rem;
+    inline-size: max-content;
+  }
+  .p-card {
+    text-align: center;
+    word-wrap: break-word;
   }
 }
 body {
@@ -953,8 +960,7 @@ ul, li {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  margin: 2rem 1rem;
-  width: 90%;
+  margin: 1rem 1rem;
 }
 
 .imagen-link {
@@ -975,13 +981,12 @@ ul, li {
 }
 
 .lenguajes {
-  width: 80%;
+  width: 60%;
   background-color: rgba(255, 255, 255, 0.9607843137);
   padding: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
   gap: 1rem;
 }
 
@@ -991,15 +996,26 @@ ul, li {
 
 .iconosProjects {
   margin: 1rem;
+  padding: 1rem;
+}
+
+.projectDescription {
+  margin-top: 10px;
 }
 
 @media (min-width: 811px) {
+  body {
+    margin-top: 2rem;
+  }
   .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
   .imagen-link {
     height: 200px;
+  }
+  .link-web {
+    margin: 1rem 0.8rem;
   }
 }
 
