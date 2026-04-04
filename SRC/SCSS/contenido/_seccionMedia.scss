@@ -19,151 +19,681 @@ width: 100%;
   gap: 2rem;
 }
 
-.cardCert{
-  background-color: #fffffff5;
-  
-  background-clip: border-box;
-  border-radius: x;
-  border: 1px solid #666;
-  border-radius: 4px 4px 4px 4px;
-  margin: 0 2rem;
-
-  -webkit-box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
-  -moz-box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
-  box-shadow: 4px 3px 11px -1px rgba(255,255,255,1);
-  text-align: center;
+.edu-marquee {
+  width: 100%;
+  background: $brand;
+  color: $espresso;
+  margin: 2.75rem 0 2rem;
+  overflow: hidden;
+  border-block: 3.5px solid $espresso;
 }
 
-.titleCard{
-  color: black;
-  font-size: 1.4rem;
+.edu-marquee__track {
+  width: max-content;
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(4rem, 10vw, 8rem);
+  white-space: nowrap;
+  will-change: transform;
+  animation: eduMarquee 19s linear infinite;
+}
+
+.edu-marquee--reverse .edu-marquee__track {
+  animation-direction: reverse;
+}
+
+.edu-marquee__text {
+  display: inline-block;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.75rem 0;
+  font-family: inherit;
+  font-size: clamp(1.05rem, 0.4vw + 0.9rem, 1.24rem);
   font-weight: 500;
-  margin: 0.5rem;
+  letter-spacing: 0;
+  color: $espresso;
 }
 
-.pcard{
-  color: black;
-  padding: 1rem;
-  font-size: 1.2rem;
-  margin: 0 0 1rem 0;
+@keyframes eduMarquee {
+  from {
+    transform: translateX(-34%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
 
-.iconosCert{
+.section-pdf {
+  margin: 2rem 0;
+}
+
+.section-bridge {
+  width: min(100% - 2.2rem, 980px);
+  margin: 1.2rem auto 2.2rem;
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 2rem;
-
+  gap: 0.85rem;
 }
 
-.iconoCert{
-  scale: 1.8;
-  margin-bottom: 1.5rem;
-  border-radius: 50%;
-  border: #66666659 solid 1px;
-
-  -webkit-box-shadow: -1px -1px 15px 0px rgba(15,15,15,0.5);
-  -moz-box-shadow: -1px -1px 15px 0px rgba(15,15,15,0.5);
-  box-shadow: -1px -1px 15px 0px rgba(15,15,15,0.5);
+.section-bridge__line {
+  flex: 1;
+  max-width: 240px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba($brand, 0.34), transparent);
 }
 
+.section-bridge__dot {
+  width: 0.52rem;
+  height: 0.52rem;
+  border-radius: 999px;
+  background: rgba($olive, 0.82);
+  box-shadow: 0 0 0 4px rgba($olive, 0.15);
+}
+
+.pdf-cta {
+  width: min(100% - 2.2rem, 980px);
+  margin: 0 auto 3.1rem;
+  padding: clamp(1.2rem, 2.7vw, 2rem);
+  border-radius: 1.2rem;
+  border: 1.5px solid rgba($brand, 0.2);
+  background:
+    radial-gradient(circle at 12% 20%, rgba($olive, 0.2), transparent 46%),
+    linear-gradient(160deg, rgba($espresso, 0.88), rgba($espresso, 0.72));
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.28),
+    inset 0 0 0 1px rgba($brand, 0.08);
+}
+
+.pdf-cta__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.82rem;
+  height: 100%;
+}
+
+.pdf-cta__eyebrow {
+  margin: 0;
+  color: $olive;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.pdf-cta__title {
+  margin: 0;
+  color: $brand;
+  line-height: 1.24;
+  font-size: clamp(1.25rem, 1.2vw + 1rem, 1.9rem);
+}
+
+.pdf-cta__text {
+  margin: 0;
+  color: rgba($brand, 0.86);
+  line-height: 1.64;
+  font-size: clamp(0.96rem, 0.42vw + 0.9rem, 1.1rem);
+  max-width: 60ch;
+}
+
+.pdf-cta__btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.62rem;
+  margin-top: auto;
+  padding: 0.78rem 1.32rem;
+  text-decoration: none;
+  color: $espresso;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 2px solid $olive;
+  background: $brand;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.pdf-cta__btn:hover {
+  transform: translateY(-2px);
+  background: #fffdf4;
+  box-shadow: 0 9px 16px rgba($olive, 0.24);
+}
+
+// ======================================================
+// CAROUSEL — Educación
+// ======================================================
+
+// Ventana del carrusel: overflow-x:clip no crea scroll
+// container, así que overflow-y queda visible (sombras OK)
 .carousel {
   position: relative;
-  width: 90%;
-  overflow: hidden;
-
-  display: block;
-  margin: 0 2rem; /* Centra horizontalmente el carrusel */
+  width: min(100% - 2rem, 520px);
+  margin-inline: auto;
+  overflow-x: clip;
+  overflow-y: visible;
+  padding-bottom: 4rem; // espacio para los botones de nav
 }
 
 .carousel-inner {
   display: flex;
-  margin: 1rem;
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+// Cada slide ocupa exactamente el 100% del viewport del carrusel
 .carousel-item {
-  min-width: fit-content;
-  transition: opacity 0.5s ease-in-out;
+  flex: 0 0 100%;
+  min-width: 100%;
+  padding: 0.25rem 0.25rem 0.75rem; // respiro para la sombra
+  box-sizing: border-box;
+  transition: opacity 0.45s ease;
 }
 
+// ──────────────────────────────────────────
+// CARD
+// ──────────────────────────────────────────
+.cardCert {
+  background: linear-gradient(160deg, $brand 0%, $brandDark 100%);
+  border-radius: 1.25rem;
+  border-top: 4px solid $olive;
+  padding: 2rem 1.75rem 1.75rem;
+  text-align: center;
+
+  // Sombra profunda sobre fondo oscuro
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.12),
+    0 16px 36px rgba(0, 0, 0, 0.28),
+    0 0 0 1.5px rgba($olive, 0.18);
+
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow:
+      0 8px 16px rgba(0, 0, 0, 0.16),
+      0 24px 48px rgba(0, 0, 0, 0.32),
+      0 0 0 1.5px rgba($olive, 0.32);
+  }
+}
+
+// Badge de tipo — pill con borde olive
+.titleCard--type {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: $olive;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.2rem 0.75rem;
+  border: 1.5px solid rgba($olive, 0.55);
+  border-radius: 999px;
+  margin-bottom: 0.75rem;
+}
+
+// Título principal de la card
+.titleCard--main {
+  display: block;
+  font-family: $fuentePrincipal;
+  font-size: clamp(1.15rem, 3.5vw, 1.55rem);
+  font-weight: 700;
+  color: $espresso;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+// Descripción
+.pcard {
+  font-family: $fuenteSecundaria;
+  font-size: 0.9rem;
+  color: rgba($espresso, 0.72);
+  line-height: 1.75;
+  margin: 0 0 1.5rem;
+  padding: 0;
+}
+
+// Fila de iconos con separador
+.iconosCert {
+  display: flex;
+  justify-content: center;
+  gap: 0.875rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba($espresso, 0.12);
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 0.625rem;
+    border: 1.5px solid rgba($espresso, 0.2);
+    color: $espresso;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+
+    &:hover {
+      background: rgba($olive, 0.12);
+      border-color: $olive;
+      color: $olive;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba($olive, 0.2);
+    }
+  }
+}
+
+.iconoCert {
+  display: block;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+// ──────────────────────────────────────────
+// NAV BUTTONS  — centrados debajo de la card,
+// fuera del area visual de la card
+// ──────────────────────────────────────────
 .carousel-control {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  bottom: 0.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
   border: none;
-  font-size: 2em;
+  color: $brand;
+  font-size: 2.75rem;
+  line-height: 1;
   cursor: pointer;
-  padding: 10px;
-  z-index: 1;
+  opacity: 0.55;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  &.prev { right: calc(50% + 0.375rem); }
+  &.next { left: calc(50% + 0.375rem); }
 }
 
-.carousel-control.prev {
-  left: 10px;
-}
-
-.carousel-control.next {
-  right: 10px;
-}
-
-.iconoCert:hover{
-  scale: 2.2;
-  transition: 1s ease;
-}
 
 .iconoPinchame{
   scale: 2.4;
   margin: 1rem;
 }
 
-.divPortofolio{
+.portfolio-cta {
+  width: min(100% - 2.2rem, 1100px);
+  margin: 3.2rem auto 2.8rem;
+  padding: clamp(1.1rem, 2.5vw, 1.8rem);
+  border-radius: 1.2rem;
+  border: 1.5px solid rgba($olive, 0.4);
+  background:
+    radial-gradient(circle at 80% 20%, rgba($olive, 0.16), transparent 45%),
+    linear-gradient(145deg, rgba($brand, 0.08), rgba($brand, 0.03));
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px rgba($brand, 0.08);
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.portfolio-cta__media {
+  border-radius: 0.95rem;
+  overflow: hidden;
+  border: 1px solid rgba($brand, 0.18);
+}
+
+.portfolio-cta .imagen-code {
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  object-fit: cover;
+  margin: 0;
+  border: none;
+  transition: transform 0.45s ease;
+}
+
+.portfolio-cta:hover .imagen-code {
+  transform: scale(1.03);
+}
+
+.portfolio-cta__content {
   display: flex;
   flex-direction: column;
+  gap: 0.8rem;
+  flex: 1;
+}
+
+.portfolio-cta__eyebrow {
+  margin: 0;
+  color: $olive;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.portfolio-cta__title {
+  margin: 0;
+  font-size: clamp(1.12rem, 0.9vw + 0.92rem, 1.65rem);
+  line-height: 1.25;
+  color: $brand;
+}
+
+.portfolio-cta__text {
+  margin: 0;
+  color: rgba($brand, 0.84);
+  font-size: clamp(0.96rem, 0.42vw + 0.9rem, 1.12rem);
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+.portfolio-cta__btn {
+  align-self: flex-start;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding: 0.78rem 1.35rem;
+  border-radius: 999px;
+  border: 2px solid $olive;
+  text-decoration: none;
+  color: $espresso;
+  background: $brand;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.portfolio-cta__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba($olive, 0.24);
+  background: #fffdf4;
+}
+
+.showcase-grid {
+  width: min(100% - 2.2rem, 1240px);
+  margin: 0 auto 3.4rem;
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "portfolio"
+    "pdf"
+    "fun"
+    "contact";
+}
+
+.showcase-grid > .portfolio-cta {
+  grid-area: portfolio;
+  width: 100%;
+  margin: 0;
+}
+
+.showcase-grid > .pdf-cta {
+  grid-area: pdf;
+  width: 100%;
+  margin: 0;
+}
+
+.showcase-grid > .fun-cta {
+  grid-area: fun;
+}
+
+.showcase-grid > .contact-panel {
+  grid-area: contact;
+}
+
+.contact-panel {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.2rem;
+  border: 1.5px solid rgba($brand, 0.18);
+  background:
+    radial-gradient(circle at 20% 18%, rgba($olive, 0.14), transparent 45%),
+    linear-gradient(150deg, rgba($brand, 0.06), rgba($brand, 0.02));
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px rgba($brand, 0.06);
+  padding: clamp(1.1rem, 2.4vw, 1.8rem);
+}
+
+.contact-panel .h2Contact {
+  margin: 0 0 1.1rem;
+  padding: 0;
+  color: $brand;
+  font-size: clamp(1.4rem, 1.2vw + 1rem, 2rem);
+  justify-content: flex-start;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+.contact-panel .contact-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-panel .contact-form input,
+.contact-panel .contact-form textarea {
+  border: 1.5px solid rgba($brand, 0.2);
+  border-radius: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  color: $brand;
+  background: rgba($principal, 0.42);
+}
+
+.contact-panel .contact-form textarea {
+  min-height: 9rem;
+  flex: 1;
+  resize: vertical;
+}
+
+.contact-panel .contact-form input::placeholder,
+.contact-panel .contact-form textarea::placeholder {
+  color: rgba($brand, 0.6);
+}
+
+.contact-panel .contact-form .btnAbout {
+  border: 2px solid $olive;
+  background: $brand;
+  color: $espresso;
+  border-radius: 999px;
+  padding: 0.72rem 1.3rem;
+  font-weight: 700;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.contact-panel .contact-form .btnAbout:hover {
+  transform: translateY(-2px);
+  background: #fffdf4;
+  box-shadow: 0 8px 16px rgba($olive, 0.24);
+}
+
+.contact-panel__actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.fun-cta {
+  width: 100%;
+  margin: 0;
+  border-radius: 1.2rem;
+  border: 1.5px solid rgba($olive, 0.45);
+  background:
+    radial-gradient(circle at 15% 20%, rgba($olive, 0.22), transparent 42%),
+    linear-gradient(145deg, rgba($brand, 0.09), rgba($brand, 0.03));
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.25),
+    inset 0 0 0 1px rgba($brand, 0.08);
+  padding: clamp(1.1rem, 2.3vw, 1.7rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.fun-cta__eyebrow {
+  margin: 0;
+  color: $olive;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+}
+
+.fun-cta__title {
+  margin: 0;
+  color: $brand;
+  font-size: clamp(1.12rem, 0.85vw + 0.95rem, 1.5rem);
+  line-height: 1.3;
+}
+
+.fun-cta__stage {
+  position: relative;
+  margin-top: 0.45rem;
+  height: 2.8rem;
+  border-radius: 999px;
+  border: 1.5px solid rgba($brand, 0.22);
+  background: rgba($principal, 0.34);
+  overflow: hidden;
+}
+
+.fun-cta__pacman {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 1.9rem);
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background: conic-gradient(from 35deg, transparent 0 58deg, $brand 58deg 360deg);
+  box-shadow: 0 0 0 4px rgba($brand, 0.12);
+  transform: translateY(-50%) scaleX(-1);
+  animation:
+    pacmanRunRTL 3.2s linear infinite,
+    pacmanChomp 0.28s linear infinite;
+}
+
+.fun-cta__ghost {
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 4.1rem);
+  width: 1.22rem;
+  height: 1.22rem;
+  border-radius: 0.6rem 0.6rem 0.28rem 0.28rem;
+  background: $olive;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 4px rgba($olive, 0.14);
+  animation:
+    ghostRunRTL 3.2s linear infinite,
+    ghostFloat 0.6s ease-in-out infinite;
+}
+
+.fun-cta__ghost::before,
+.fun-cta__ghost::after {
+  content: "";
+  position: absolute;
+  top: 0.34rem;
+  width: 0.18rem;
+  height: 0.18rem;
+  border-radius: 50%;
+  background: $principal;
+}
+
+.fun-cta__ghost::before { left: 0.32rem; }
+.fun-cta__ghost::after { right: 0.32rem; }
+
+.fun-cta__stage:nth-of-type(2) .fun-cta__pacman {
+  left: 1rem;
+  transform: translateY(-50%);
+  animation:
+    pacmanRunLTR 3.2s linear infinite,
+    pacmanChomp 0.28s linear infinite;
+}
+
+.fun-cta__stage:nth-of-type(2) .fun-cta__ghost {
+  left: 3.2rem;
+  animation:
+    ghostRunLTR 3.2s linear infinite,
+    ghostFloat 0.6s ease-in-out infinite;
+}
+
+@keyframes pacmanRunRTL {
+  from { left: calc(100% - 1.9rem); }
+  to { left: -1.4rem; }
+}
+
+@keyframes ghostRunRTL {
+  from { left: calc(100% - 4.1rem); }
+  to { left: -3.6rem; }
+}
+
+@keyframes pacmanRunLTR {
+  from { left: 1rem; }
+  to { left: calc(100% + 0.4rem); }
+}
+
+@keyframes ghostRunLTR {
+  from { left: 3.2rem; }
+  to { left: calc(100% + 2.6rem); }
+}
+
+@keyframes pacmanChomp {
+  0%, 100% { background: conic-gradient(from 35deg, transparent 0 58deg, $brand 58deg 360deg); }
+  50% { background: conic-gradient(from 20deg, transparent 0 30deg, $brand 30deg 360deg); }
+}
+
+@keyframes ghostFloat {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -2px; }
 }
   
-  @media (min-width:600px) {
-
-    .flex{
-      margin: 2rem;
-      padding: 2rem;
+@media (min-width: $tablet) {
+  .showcase-grid {
+    gap: 1.8rem;
   }
 
-  main{
-    margin-left: 2rem;
+  .portfolio-cta {
+    padding: clamp(1.25rem, 2.4vw, 1.7rem);
   }
 
-  .contenedorCard{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 1rem;
-    margin: 0 1.4rem 0 1.4rem;
+  .carousel {
+    width: min(100% - 4rem, 520px);
   }
 
-  .cardCert{
-    padding: 2rem;
-  }
-  
-  .flexrow{
-    display: flex;
-    flex-direction: column;
+  .cardCert {
+    padding: 2.5rem 2.25rem 2rem;
   }
 
-  .imagen-code{
-    width: 70%;
-    margin: 1rem;
+  .titleCard--main {
+    font-size: 1.6rem;
   }
 
-  .carousel-item{
-    margin: 1rem;
-    inline-size: max-content;
+  .pcard {
+    font-size: 0.975rem;
+  }
+}
+
+@media (min-width: $desktop) {
+  .showcase-grid {
+    grid-template-columns: 1.05fr 1fr 1.15fr;
+    grid-template-rows: minmax(320px, 1fr) minmax(320px, 1fr);
+    grid-template-areas:
+      "portfolio contact contact"
+      "pdf pdf fun";
+    align-items: stretch;
+    gap: 1.9rem;
   }
 
-  .p-card{
-    text-align: center;
-    word-wrap: break-word;
+  .portfolio-cta,
+  .pdf-cta,
+  .fun-cta,
+  .contact-panel {
+    height: 100%;
   }
-  
 }

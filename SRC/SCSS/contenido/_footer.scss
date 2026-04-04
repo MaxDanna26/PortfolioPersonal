@@ -1,48 +1,81 @@
-.footer{
-    background-color: black;
+.footer {
+    margin-top: 2.3rem;
+    padding: clamp(1.2rem, 2.8vw, 1.9rem) 1rem 1.2rem;
+    background:
+        radial-gradient(circle at 15% 20%, rgba($olive, 0.16), transparent 38%),
+        radial-gradient(circle at 85% 5%, rgba($brand, 0.08), transparent 34%),
+        linear-gradient(160deg, #090909, #141210 58%, #0c0b0b);
+    border-top: 1px solid rgba($brand, 0.16);
 }
 
-.nav-footer{  
-    display: flex;
-    justify-content: end;
-    gap: .5rem;
-    padding: 2rem;
-    color: black;
-
-        a {
-                color: white;
-                text-decoration: none;
-                font-size: 1rem;
-            }
+.footer__title {
+    margin: 0;
+    text-align: center;
+    color: $brand;
+    font-size: clamp(1rem, 0.8vw + 0.88rem, 1.3rem);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-.nav-footer button{
-    color: white;
-}
-
-.seccion-redes{
-    display: flex;
-    justify-content:center;
-    padding: 1rem 0 0 0;
-
-}
-
-.icono-footer{
-    width: 48px;
-    height: 48px;
-}
-
-.icono-footer:hover{
-    cursor: pointer;
-    transform: scale(1.2);
-    transform: 4s;
-}
-
-.copyright{
+.seccion-redes {
+    margin-top: 0.95rem;
     display: flex;
     justify-content: center;
-    color: white;
-    }
+    flex-wrap: wrap;
+    gap: 0.62rem;
+}
+
+.footer-link {
+    width: 3.15rem;
+    height: 3.15rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1.6px solid rgba($brand, 0.22);
+    background:
+        linear-gradient(160deg, rgba($brand, 0.1), rgba($brand, 0.02)),
+        rgba($principal, 0.46);
+    box-shadow:
+        0 8px 14px rgba(0, 0, 0, 0.28),
+        inset 0 0 0 1px rgba($brand, 0.06);
+    transition: transform 0.24s ease, border-color 0.24s ease, background-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.footer-link:hover {
+    transform: translateY(-3px) scale(1.05);
+    border-color: rgba($olive, 0.58);
+    background:
+        linear-gradient(160deg, rgba($olive, 0.18), rgba($brand, 0.08)),
+        rgba($principal, 0.5);
+    box-shadow:
+        0 12px 18px rgba(0, 0, 0, 0.33),
+        0 0 0 4px rgba($olive, 0.1);
+}
+
+.footer-link:focus-visible {
+    outline: 2px solid rgba($olive, 0.92);
+    outline-offset: 3px;
+}
+
+.icono-footer {
+    width: 1.35rem;
+    height: 1.35rem;
+    display: block;
+    object-fit: contain;
+    filter: brightness(1.03) contrast(1.08);
+}
+
+.copyright {
+    margin: 1rem 0 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: rgba($brand, 0.78);
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+}
 
 
 

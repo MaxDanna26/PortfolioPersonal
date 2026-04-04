@@ -1,32 +1,69 @@
-// Paleta & tipografía
-$color-bg:        #0b0d0f;
-$color-bg-2:      #111318;
-$color-text:      #f5f5f7;
-$color-muted:     #9aa3ab;
+// Tema: dark moderno con identidad cream + espresso
 
-$color-brand:     #e50914; 
-$color-brand-600: #bf0811;
+// Colores base
+$color-bg: #11100f;
+$color-bg-2: #1a1817;
+$color-surface: #25211f;
+$color-surface-2: #2f2a27;
+
+$color-text: #fff8e7;
+$color-muted: #d9cfbe;
+$color-heading: #fff8e7;
+
+// Marca y acentos
+$color-brand: #fff8e7;       // Cream
+$color-brand-600: #e6dccb;
+$color-accent-dark: #4e342e; // Espresso
+$color-accent-olive: #8a9a5b;
+
+// Feedback
+$color-success: #89a56a;
+$color-warning: #c49a6c;
+$color-danger: #bc5a4c;
 
 // UI
-$radius-lg: 14px;
-$shadow-lg: 0 8px 30px rgba(0,0,0,.25);
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 20px;
+$shadow-sm: 0 6px 18px rgba(0, 0, 0, 0.22);
+$shadow-lg: 0 14px 44px rgba(0, 0, 0, 0.35);
 
-// Tipografía & ritmo
-$font-sans: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-$fs-hero: clamp(2.8rem, 2.6vw + 1.6rem, 5.2rem); // h2 grande
-$fs-h3:   clamp(1.6rem, 1.1vw + 1rem, 3rem);
-$fs-h4:   clamp(1.2rem, 0.8vw + .8rem, 2rem);
-$fs-body: clamp(1rem, .35vw + .9rem, 1.2rem);
-$leading: 1.55;
-$container-max: 1160px;
+// Tipografía
+$font-brand: 'Erione', 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-display: 'Sora', system-ui, -apple-system, 'Segoe UI', sans-serif;
+$font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-// Helpers
+// Escala tipográfica
+$fs-hero: clamp(3rem, 3.3vw + 1.2rem, 5.6rem);
+$fs-h3: clamp(1.8rem, 1.2vw + 1rem, 3.1rem);
+$fs-h4: clamp(1.3rem, 0.85vw + 0.85rem, 2.1rem);
+$fs-body: clamp(1.05rem, 0.4vw + 0.9rem, 1.24rem);
+$leading: 1.72;
+
+// Espaciado aireado
+$space-1: 0.5rem;
+$space-2: 0.75rem;
+$space-3: 1rem;
+$space-4: 1.5rem;
+$space-5: 2rem;
+$space-6: 3rem;
+$space-7: 4rem;
+
+// Layout
+$container-max: 1240px;
+
+// Breakpoints
+$bp-sm: 480px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
 @mixin container {
-  width: min(100% - 2rem, #{$container-max});
+  width: min(100% - 2.5rem, #{$container-max});
   margin-inline: auto;
 }
 
 @mixin focus-ring {
-  outline: 2px solid $color-brand;
+  outline: 2px solid $color-accent-olive;
   outline-offset: 3px;
 }

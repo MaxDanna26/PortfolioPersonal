@@ -1,28 +1,67 @@
 header{
 display: flex;
+align-items: center;
 justify-content: space-between;
 position: fixed;
 top: 0;
 left: 0;
-width: 100%;
-color: #fff; /* Ajusta el color de texto a tu preferencia */
-z-index: 100; /* Asegura que el encabezado esté por encima del contenido */
-background: black;
+right: 0;
+padding: 1rem 1.25rem;
+color: $brand;
+z-index: 100;
+background: rgba(26, 24, 23, 0.88);
+backdrop-filter: blur(18px);
+border-bottom: 1px solid rgba(255, 248, 231, 0.12);
+box-sizing: border-box;
 
 a{
-    color: white;
+    color: $brand;
     text-decoration: none;
 }
 
 }
 
 h1{
-    font-size: 1.5rem;
-    color: white;
-    margin-left: 3rem;
+    margin: 0;
+    font-size: clamp(1.35rem, 1.8vw, 1.7rem);
+    color: $brand;
+}
+
+.titular {
+    font-family: $fuentePrincipal;
+    letter-spacing: 0.04em;
+    font-size: 3rem;
+}
+
+.welcomeMsj {
+    min-height: calc(100vh - clamp(5rem, 7vw, 6.5rem));
+    width: 100%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
+.welcomeMsj h2 {
+    width: min(100%, 14ch);
+    max-width: 14ch;
+    font-size: clamp(2.8rem, 8vw, 7rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    text-wrap: balance;
 }
 
 
 @media (min-width:811px) { 
     header{
-    display: flex;} }
+    padding: 1rem 2.5rem;}
+
+    .welcomeMsj {
+        padding-inline: clamp(3rem, 8vw, 8rem);
+    }
+
+    .welcomeMsj h2 {
+        width: min(100%, 12ch);
+        max-width: 12ch;
+        font-size: clamp(4.5rem, 8.2vw, 8.5rem);
+    }
+}

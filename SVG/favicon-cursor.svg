@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cream cursor favicon">
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="#11100f"/>
+  <rect x="3" y="3" width="58" height="58" rx="14" fill="none" stroke="#8a9a5b" stroke-opacity="0.45" stroke-width="2"/>
+
+  <path d="M18 14L18 45L26.7 35.9L33.2 50L40.2 46.8L33.8 32.8L46 32.8L18 14Z" fill="#fff8e7"/>
+  <circle cx="46" cy="18" r="4" fill="#8a9a5b"/>
+</svg>

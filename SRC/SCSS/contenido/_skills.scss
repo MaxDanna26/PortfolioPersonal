@@ -11,13 +11,13 @@
     height: 10vh;
     font-size: 3rem;
     font-weight: bold;
-  }
+}
 
   ul,li{
     color: white;
-  }
+}
 
-  .grid-icons{
+.grid-icons{
     display: flex;
     flex-direction: row;
         ul{
@@ -28,19 +28,19 @@
     li{ margin: none;
         list-style: none;}
     
-  }
+}
 
   
 @media (min-width:811px) {
 
-  .grid-icons{
+  .grid-icons {
       flex-direction: column;
       width: 100%;
       align-items: center;
       ul{width: 90%;}
       li{text-align: center;
         margin-bottom: 8px;}
-  } 
+  }
 
   .imagen-icons{
     width: 50%;

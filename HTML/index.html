@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="16x16"  href="/build/IMG/favicon.png">
+    <link rel="icon" type="image/svg+xml" href="/SVG/favicon-cursor.svg">
+    <link rel="alternate icon" type="image/png" sizes="16x16" href="/build/IMG/favicon.png">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     <!-- Animation -->
@@ -16,7 +17,7 @@
     <link rel="stylesheet" href="../build/css/app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Comic+Neue:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
 
     <title>MGD: Programador Full Stack</title>
 </head>
@@ -29,17 +30,17 @@
             <a class="titular" href="/HTML/index.html">Danna Max</a>
         </h1>
 
-        <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+        <button id="abrir" class="abrir-menu" type="button" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
 
-        <nav class="navegation" id="nav">
+        <nav class="navegation" id="nav" aria-label="Primary navigation" aria-hidden="true">
             <div class="container-btn">
-                <button class="cerrar-menu" id="cerrar"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+                <button class="cerrar-menu" id="cerrar" type="button" aria-label="Cerrar menu"><i class="fa-sharp fa-solid fa-xmark"></i></button>
             </div>
             <ul class="navegation-list">
-                <a href="/HTML/index.html">Home</a>
-                <a href="/HTML/index.html#aboutme">About me</a>
-                <a href="/HTML/projects.html">Projects</a>
-                <a href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing">CV</a>
+                <li><a href="/HTML/index.html">Home</a></li>
+                <li><a href="/HTML/index.html#aboutme">About me</a></li>
+                <li><a href="/HTML/projects.html">Projects</a></li>
+                <li><a class="nav-link--cta" href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing">CV</a></li>
             </ul>
         </nav>
     </header>
@@ -49,249 +50,138 @@
     </div>
 
     <main>
-        <div id="aboutme" class="contenedor">    
+        <div class="edu-marquee edu-marquee--reverse scroll-element" aria-label="About Me">
+            <div class="edu-marquee__track">
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; About Me/&gt;</h3>
+            </div>
+        </div>
 
-            <img class="imagen-personal scroll-element" src="/build/IMG/fotoPerfilACT.jpeg" alt="Imagen Personal">
+        <div id="aboutme">
+
+            <img class="imagen-personal scroll-element" src="/build/IMG/Perfil.jpg" alt="Imagen Personal de Maximiliano Danna">
             
             <div class="mediaContent">
                 <p class="p-aboutme scroll-element">
-                    Me llamo Maximiliano Gaspar Danna y vivo en Barcelona. Soy un joven multicultural que ha vivido y trabajado en diferentes países de Europa, ya que me encanta viajar, la música y la fotografía amateur. Me considero una persona seria y comprometida, con muchas ganas y energias. Me gusta el orden, el compañerismo y, sobre todo, las buenas vibras!
+                    Me llamo Max Danna y vivo en Barcelona. Soy un joven multicultural que ha vivido y trabajado en diferentes países de Europa, ya que me encanta viajar, la música y el code. Me considero una persona seria y comprometida, con muchas ganas y energias. Me gusta el orden, el compañerismo y, sobre todo, las buenas vibras!
                 </p>
     
                 <p id="aboutmeP" class="p-aboutme oculto">
-                    Mi formación ha comenzado hace unos años y aún sigo en ello, realizándola de distintas maneras como bootcamps, modalidades e-learning y de forma presencial en institutos de Barcelona. Durante mis años de aprendizaje, he realizado funciones de programación, maquetación, diseño y desarrollo con estándares web, CSS, HTML, JavaScript, jQuery, maquetación multinavegador y multiplataforma. Además de frontend, también me he formado en construcción, diseño y desarrollo de bases de datos relacionales o no, conexiones SQL, lógicas de programación o de aplicaciones web, así como también en las buenas prácticas de código. ¡Y siempre pienso continuar formándome en este hermoso ámbito!
-                    Por supuesto que estoy totalmente abierto a seguir aprendiendo, formándome y evolucionando, ya que creo que es esencial en este sector laboral y, además, porque quiero ser mejor profesional!
+                    Me he formado en Barcelona hace unos años, realizándo varios cursos como bootcamps, aprendizaje e-learning y de forma presencial en institutos de la ciudad. He aprendido mucho de maquetación y desarrollo con estándares web tales como CSS, HTML, JavaScript, jQuery, diseño responsive y multiplataforma. Además de frontend, también me he formado en construcción, diseño y desarrollo de bases de datos relacionales o no, conexiones SQL, lógicas de programación o de aplicaciones web, así como también en las buenas prácticas de código leyendo libros tales como "Clean Code" de Robert C. Martin. ¡Y siempre pienso continuar formándome en este hermoso ámbito!
+                    Por supuesto que estoy totalmente a formarme y evolucionar, ya que creo que es esencial en este sector laboral y, además, porque quiero ser mejor profesional!
                 </p>
     
                 <div class="flex-end">
-                    <button id="btnAbout" class="btnAbout scroll-element">
-        
+                        <button id="btnAbout" class="btnAbout" aria-expanded="false">
+                        <span class="btnAbout__text">Ver más</span>
+                        <i class="btnAbout__icon fa-solid fa-chevron-down"></i>
                     </button>
                 </div>
             </div>
 
         </div>
 
-        <div class="scroll-element">
-            <h3>
-                < Web Developer Education />
-            </h3>
+        <div class="edu-marquee scroll-element" aria-label="Web Developer Education">
+            <div class="edu-marquee__track">
+                <h3 class="edu-marquee__text">&lt; Web Developer Education /&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; Web Developer Education /&gt;</h3>
+                <h3 class="edu-marquee__text">&lt; Web Developer Education /&gt;</h3>
+            </div>
         </div>
         
         <div class="contenedor">
             <div class="carousel scroll-element">
-
-                <div class="carousel-inner">
-    
-                    <div class="carousel-item">
-                        <div class="cardCert">
-            
-                            <p class="titleCard">
-                                Bootcamp:
-                            </p>
-            
-                            <p class="titleCard">
-                                Full Stack Angular - 2023
-                            </p>
-            
-                            <p class="pcard">
-                                Maquetacion de proyectos webs en distintos lenguajes enfocado a aprender 
-                                patrones de programación, manejo de gitHub y bases de datos relacionales.
-                            </p>
-                            
-                            <div class="iconosCert">
-                                <a href="https://www.linkedin.com/in/maximiliano-danna-67b862266/details/education/1712490972755/single-media-viewer/?profileId=ACoAAEFENz8BunUIgOHbPXktp5dYTBxQwMRFVkY">
-                                    <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
-                                </a>
-                                <a href="https://www.red.es/es/actualidad/noticias/conoce-e-inscribete-los-cursos-de-talento-digital-para-jovenes-y-personas">
-                                    <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                                </a>
-                                <a href="https://github.com/MaxDanna26/PorfolioAngular_FullStack">
-                                <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                                </a>
-                            </div>
-                        </div>
-                    </div>         <!-- fin de la card -->
-            
-                    <div class="carousel-item">
-                        <div class="cardCert">
-            
-                            <p class="titleCard">
-                                Bootcamp:
-                            </p>
-            
-                            <p class="titleCard">
-                                Php y BDDD - 2023
-                            </p>
-            
-                            <p class="pcard">
-                                Conocimientos de bases de datos, diseño, manipulación de datos, desarrollo web dinámico, transacciones, vistas, y optimización.
-                            </p>
-                            
-                            <div class="iconosCert">
-                                <a href="https://www.linkedin.com/in/maximiliano-danna-67b862266/details/education/1712491216560/single-media-viewer/?profileId=ACoAAEFENz8BunUIgOHbPXktp5dYTBxQwMRFVkY">
-                                    <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
-                                </a>
-                                <a href="https://pimecformacio.org/es/">
-                                    <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                                </a>
-                                <a href="https://github.com/MaxDanna26/ProyectoFinal_PHPyBDD">
-                                <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                                </a>
-                            </div>
-                        </div>
-                    </div>         <!-- fin de la card -->
-            
-                    <div class="carousel-item">
-                        <div class="cardCert">
-            
-                            <p class="titleCard">
-                                Certificado:
-                            </p>
-            
-                            <p class="titleCard">
-                                Azure Fundamentals - 2023
-                            </p>
-            
-                            <p class="pcard">
-                                Conocimiento de nivel básico de los servicios en la nube y cómo se brindan esos servicios con Microsoft Azure.
-                            </p>
-                            
-                            <div class="iconosCert">
-                                <a href="https://www.credly.com/badges/5fe75ab4-b558-4b74-95bd-06b06d7c4a3a/linked_in_profile">
-                                    <box-icon class="iconoCert" name='star' type='solid' color='#ffd700' ></box-icon>
-                                </a>
-                                <a href="https://learn.microsoft.com/es-es/credentials/certifications/azure-fundamentals/?practice-assessment-type=certification">
-                                    <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                                </a>
-                            </div>
-                        </div>
-                    </div>         <!-- fin de la card -->
-            
-                    <div class="carousel-item">
-                        <div class="cardCert">
-            
-                            <p class="titleCard">
-                                Bootcamp:
-                            </p>
-            
-                            <p class="titleCard">
-                                Full Stack C# y .Net - 2023
-                            </p>
-            
-                            <p class="pcard">
-                                Fundamentos de programacion orientada a objetos con C# y .NET, git control de versiones, desarrollo web estático, bases de datos SQL y Frontend.
-                            </p>
-                            
-                            <div class="iconosCert">
-                                <a href="https://fundacionesplai.org/programa/formacion-tic-e-insercion-laboral/">
-                                    <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                                </a>
-                                <a href="https://github.com/MaxDanna26/WindowsForms_FundacionSplai">
-                                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                                </a>
-                            </div>
-                        </div>
-                    </div>         <!-- fin de la card -->
-        
-                    <div class="carousel-item">
-                        <div class="cardCert">
-            
-                            <p class="titleCard">
-                                Escuela:
-                            </p>
-            
-                            <p class="titleCard">
-                                42 Barcelona - 2024
-                            </p>
-            
-                            <p class="pcard">
-                                Fundamentos de programacion con C, git, softskills y examenes semanales para ingresar a la escuela 42 reconocida en toda Europa creada por la compañia Telefonica.
-                            </p>
-                            
-                            <div class="iconosCert">
-                                <a href="https://www.42barcelona.com/es">
-                                    <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                                </a>
-                                <a href="https://github.com/MaxDanna26/42Barcelona">
-                                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                                </a>
-                            </div>
-                        </div>
-                    </div>        <!-- fin de la card -->
-    
-                </div>
-                
-                <button class="carousel-control prev">‹</button>
-                <button class="carousel-control next">›</button>
+                <!-- Las cards se renderizan dinámicamente desde EDUCATION_DATA en main.js -->
+                <div class="carousel-inner"></div>
+                <button class="carousel-control prev" aria-label="Anterior">‹</button>
+                <button class="carousel-control next" aria-label="Siguiente">›</button>
             </div>
         </div>
 
-
-        <div style="margin: 2rem 0;" class="contenedor scroll-element">
-
-            <p class="p-aboutme">Puedes saber mas acerca de mi biografia, experiencia, educacion y habilidades en el PDF de aqui :</p>
-            
-            <a class="enlacePinchame" href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing" download>
-                <box-icon class="iconoPinchame" name='down-arrow-square' type='solid' color='#ea0f1e' ></box-icon>
-            </a>
+        <div class="section-bridge scroll-element" aria-hidden="true">
+            <span class="section-bridge__line"></span>
+            <span class="section-bridge__dot"></span>
+            <span class="section-bridge__line"></span>
         </div>
+
+
+        <section class="showcase-grid" aria-label="Portfolio y contacto">
+            <section class="portfolio-cta scroll-element" aria-label="Explorar portfolio">
+                <div class="portfolio-cta__media">
+                    <img class="imagen-code" src="/build/IMG/code.jpg" alt="Preview de proyectos y codigo">
+                </div>
+
+                <div class="portfolio-cta__content">
+                    <p class="portfolio-cta__eyebrow">Featured Work</p>
+                    <h4 class="portfolio-cta__title">No te vayas sin ver mis proyectos reales</h4>
+                    <p class="portfolio-cta__text">Cada proyecto incluye decisiones de diseño, arquitectura y resultados. Este es el lugar donde mejor se ve mi trabajo en accion.</p>
+                    <a class="portfolio-cta__btn" href="/HTML/projects.html">Entrar al portfolio <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></a>
+                </div>
+            </section>
+
+            <section class="pdf-cta scroll-element" aria-label="Descargar CV en PDF">
+                <div class="pdf-cta__content">
+                    <p class="pdf-cta__eyebrow">CV Completo</p>
+                    <h4 class="pdf-cta__title">Descarga mi perfil profesional en PDF</h4>
+                    <p class="pdf-cta__text">Incluye experiencia, formacion, stack tecnico y enfoque de trabajo para que puedas evaluarme de forma rapida y clara.</p>
+                    <a class="pdf-cta__btn" href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                        Abrir CV
+                        <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </section>
+
+            <section class="fun-cta scroll-element" aria-label="Bloque decorativo animado">
+                <p class="fun-cta__eyebrow">Creative Pulse</p>
+                <h4 class="fun-cta__title">La IA tratando de remplazarme en mi trabajo</h4>
+                <div class="fun-cta__stage" aria-hidden="true">
+                    <span class="fun-cta__ghost"></span>
+                    <span class="fun-cta__pacman"></span>
+                </div>
+                <div class="fun-cta__stage" aria-hidden="true">
+                    <span class="fun-cta__ghost"></span>
+                    <span class="fun-cta__pacman"></span>
+                </div>
+            </section>
+
+            <section class="contact-panel" id="contact">
+                <h2 class="h2Contact scroll-element animate__animated animate__tada">
+                    Let's make something great!
+                </h2>
+
+                <form id="contactForm" onsubmit="enviarCorreo(); return false;" class="contact-form scroll-element">
+                    <input placeholder="Nombre" type="text" id="name" name="name">
+
+                    <input placeholder="Asunto" type="text" id="subject" name="subject">
+
+                    <textarea placeholder="Exprésate Tranquilo!" id="message" name="message" rows="5"></textarea>
+
+                    <div class="contact-panel__actions">
+                        <button class="btnAbout" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </section>
+        </section>
 
     </main>
 
-    <div class="contenedor">
-
-        <img class="scroll-element imagen-code" src="/build/IMG/code.jpg" alt="Imagen de Coding">
-
-        <div class="divPortofolio">
-            <h4>No te vayas sin visitar mis proyectos realizados:</h4>
-            <button class="btnAbout"><a class="enlace" href="/HTML/projects.html">Portfolio</a></button>
-        </div>
-
-    </div>
-    
-    <br id="contact">
-
-    <section class="contenedor">
-        
-        <h2 class="h2Contact scroll-element animate__animated animate__tada">
-            Let's make something great!
-        </h2>
-
-        <form id="contactForm" onsubmit="enviarCorreo(); return false;" class="contact-form  scroll-element">
-
-            <input placeholder="Nombre" type="text" id="name" name="name">
-
-            <input placeholder="Asunto" type="text" id="subject" name="subject">
-
-            <textarea placeholder="Exprésate Tranquilo!" id="message" name="message" rows="5"></textarea>
-
-            <div class="contenedor">
-                <a href="mailto:maximilianodanna@hotmail.com?subject=Consulta%20de%20Portafolio&body=Hola,%20me%20gustaría%20saber%20más%20sobre%20tu%20trabajo."><button class="btnAbout">Enviar</button></a>
-            </div>
-
-        </form>
-
-    </section>
-
 
     <footer class="footer">
-        <div class="seccion-redes">
-            <a href="mailto:maximilianodanna@hotmail.com?subject=Contratarme!&body="><img class="icono-footer" src="/SVG/correo.svg" alt="Icono email"></a>
-
-            <a href="https://www.instagram.com/maximilianodanna/"><img class="icono-footer" src="/SVG/instagram.svg" alt="Icono Instagram"></a>
-
-            <a href="https://es.linkedin.com/in/maximiliano-danna-67b862266?trk=people-guest_people_search-card"><img class="icono-footer" src="/SVG/linkedlin.svg" alt="Icono Linkedlin"></a>
-
-            <a href="https://www.facebook.com/Max.Danna23"><img class="icono-footer" src="/SVG/facebook.svg" alt="Icono Facebook"></a>
-
-            <a href="https://github.com/maxdanna26"><img class="icono-footer" src="/SVG/github.svg" alt="Icono Instagram"></a>
-            <a href=""></a>
+        <p class="footer__title">Conectemos</p>
+        <div class="seccion-redes" aria-label="Redes sociales">
+            <a class="footer-link" href="mailto:maximilianodanna@hotmail.com?subject=Contratarme!&body=" aria-label="Enviar email"><img class="icono-footer" src="/SVG/correo.svg" alt=""></a>
+            <a class="footer-link" href="https://www.instagram.com/maximilianodanna/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram"><img class="icono-footer" src="/SVG/instagram.svg" alt=""></a>
+            <a class="footer-link" href="https://es.linkedin.com/in/maximiliano-danna-67b862266?trk=people-guest_people_search-card" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn"><img class="icono-footer" src="/SVG/linkedlin.svg" alt=""></a>
+            <a class="footer-link" href="https://www.facebook.com/Max.Danna23" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook"><img class="icono-footer" src="/SVG/facebook.svg" alt=""></a>
+            <a class="footer-link" href="https://github.com/maxdanna26" target="_blank" rel="noopener noreferrer" aria-label="Abrir GitHub"><img class="icono-footer" src="/SVG/github.svg" alt=""></a>
         </div>
-        </div>
-
         <p class="copyright">Todos los derechos reservados<span id="year"></span>&copy;</p>
-        <br>
     </footer>
 
 

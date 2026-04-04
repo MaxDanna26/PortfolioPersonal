@@ -1,12 +1,35 @@
-*{
-    font-family: 'Anton', sans-serif;
+@font-face {
+    font-family: 'Erione';
+    src: local('Erione'), local('Erione Regular'), local('Erione-Regular');
+    font-display: swap;
+}
+
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
 
 }
 
-.seccion-universal {
-    padding: 5rem;
-    background: white;
-    border: 1px solid rgba(34, 34, 34, 0.1);
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $principal;
+    color: $textoPrincipal;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: clamp(5rem, 7vw, 6.5rem);
+    overflow-x: hidden;
+    font-family: $fuentePrincipal;
+}
+
+img {
+    display: block;
+    background: $secundario;
+    border: 1px solid rgba(255, 248, 231, 0.12);
     border-radius: 2px;
 }
 

@@ -1,12 +1,23 @@
-$separacion: 5rem;
-$fuentePrincipal:'Anton', sans-serif;
+@use '../tokens' as t;
 
-// Colores
+$separacion: t.$space-6;
+$fuentePrincipal: t.$font-display;
+$fuenteSecundaria: t.$font-sans;
+$fuenteMarca: t.$font-brand;
 
-$principal:rgba(2,0,36,1);
+// Colores legacy mapeados al tema nuevo
+$principal: t.$color-bg;
+$secundario: t.$color-bg-2;
+$textoPrincipal: t.$color-text;
+$muted: t.$color-muted;
+$brand: t.$color-brand;
+$brandDark: t.$color-brand-600;
+$espresso: t.$color-accent-dark;
+$olive: t.$color-accent-olive;
 
-// Tamaño de Media Queries
-$telefono: 375px;
-$tablet: 767px;
-$desktop: 1024px;
+// Breakpoints
+$telefono: t.$bp-sm;
+$tablet: t.$bp-md;
+$desktop: t.$bp-lg;
+$desktopXL: t.$bp-xl;
 

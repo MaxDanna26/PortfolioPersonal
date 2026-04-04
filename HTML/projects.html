@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/SVG/favicon-cursor.svg">
+    <link rel="alternate icon" type="image/png" sizes="16x16" href="/build/IMG/favicon.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="../build/css/app.css">
     <!-- ICONOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Comic+Neue:ital@1&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Smokum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
     <title>MGD: Programador Full Stack</title>
 </head>
 <body>
@@ -23,222 +23,245 @@
                 <a class="titular" href="/HTML/index.html">Danna Max</a>
             </h1>
 
-            <button id="abrir" class="abrir-menu"><i class="fa-solid fa-bars"></i></button>
+            <button id="abrir" class="abrir-menu" type="button" aria-label="Abrir menu" aria-controls="nav" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
 
-            <nav class="navegation" id="nav">
+            <nav class="navegation" id="nav" aria-label="Primary navigation" aria-hidden="true">
 
                 <div class="container-btn">
 
-                    <button class="cerrar-menu" id="cerrar"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+                    <button class="cerrar-menu" id="cerrar" type="button" aria-label="Cerrar menu"><i class="fa-sharp fa-solid fa-xmark"></i></button>
 
                 </div>
 
                 <ul class="navegation-list">
 
-                    <a href="/HTML/index.html">Home</a>
-                    <a href="/HTML/index.html#aboutme">About me</a>
-                    <a href="/HTML/projects.html">Projects</a>
-                    <a href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing">CV</a>
+                    <li><a href="/HTML/index.html">Home</a></li>
+                    <li><a href="/HTML/index.html#aboutme">About me</a></li>
+                    <li><a href="/HTML/projects.html">Projects</a></li>
+                    <li><a class="nav-link--cta" href="https://drive.google.com/file/d/1niR2sgQJKDu76DgutEtCd3hr6eNX_bdf/view?usp=sharing">CV</a></li>
 
                 </ul>
 
             </nav>
         </header>
 
-        <div class="grid">
-
-            <div class="link-web scroll-element">
-
-                <a href="https://blogcafebar.netlify.app">
-                    <img class="imagen-link" src="/build/IMG/blog.jpg" alt="Imagen del Blog Café">Blog De Café
-                </a>
-
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
+        <main class="projects-page" aria-label="Listado de proyectos">
+            <section class="projects-hero scroll-element" aria-label="Introduccion proyectos">
+                <p class="projects-hero__eyebrow">Selected Work</p>
+                <h2 class="projects-hero__title">Proyectos reales, construidos para resolver problemas reales</h2>
+                <p class="projects-hero__text">Desde landing pages optimizadas hasta apps con logica completa y stack moderno. Esta seleccion resume mi forma de pensar producto, diseño y codigo.</p>
+                <div class="projects-hero__meta">
+                    <span>9+ proyectos publicados</span>
+                    <span>Frontend y Full Stack</span>
+                    <span>Mobile first</span>
                 </div>
+            </section>
 
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/BlogCafe">
-                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-            </div> <!-- FIN DEL LINK -->
+            <section class="projects-grid" aria-label="Tarjetas de proyectos">
+                <article class="project-card project-card--featured scroll-element" aria-label="Rol actual en Wolters Kluwer">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/WK_Background.jpg" alt="Logo de Wolters Kluwer">
+                        <span class="project-card__status">Current Role</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Squarepoint · Wolters Kluwer</p>
+                        <h3 class="project-card__title">Integraciones .NET para Payroll en Espana</h3>
+                        <p class="project-card__description">Contratado por Squarepoint como consultora IT y asignado como recurso al equipo DAM de Wolters Kluwer para integrar portales globales de empleados con herramientas de nomina en Espana.</p>
+                        <ul class="project-card__highlights" aria-label="Responsabilidades actuales">
+                            <li>Desarrollo y mantenimiento de soluciones en C# y .NET para clientes enterprise.</li>
+                            <li>Integracion de APIs y servicios externos con plataformas de Wolters.</li>
+                            <li>Diseno y optimizacion de bases relacionales en MySQL y SQL Server.</li>
+                            <li>Refactors, soporte funcional y mejora continua en aplicativos de gestion contable.</li>
+                            <li>Formacion y soporte a clientes para consumo de la API A3innuva Nomina.</li>
+                            <li>Aplicacion diaria de Clean Code, Git y documentacion clara para escalar producto y equipo.</li>
+                        </ul>
+                        <div class="project-card__tags" aria-label="Tecnologias usadas">
+                            <span>C#</span><span>.NET</span><span>SQL Server</span><span>MySQL</span><span>APIs</span><span>Git</span>
+                        </div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://www.wolterskluwer.com" target="_blank" rel="noopener noreferrer">Ver empresa <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                            <span class="project-card__btn project-card__btn--ghost project-card__btn--disabled" aria-disabled="true">Proyecto privado</span>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="link-web scroll-element">
-                <a href="https://inmobiliario.netlify.app"><img  class="imagen-link" src="/build/IMG/bienesRaices.jpg" alt="Imagen Bienes Raices">Bienes Raices</a>
+                <article class="project-card scroll-element" aria-label="Proyecto Love.app">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/loveApp.png" alt="Preview del proyecto Love.app">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Idea propia</p>
+                        <h3 class="project-card__title">Love.app</h3>
+                        <p class="project-card__description">Aplicacion web pensada para parejas. Nacio al detectar que muchas personas de nuestra edad tienen dificultades para comunicarse de forma sana y clara, y busca ofrecer una herramienta simple para mejorar conversaciones importantes.</p>
+                        <div class="project-card__tags"><span>UX Writing</span><span>Comunicación</span><span>Producto</span></div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://love-app-delta.vercel.app/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            <span class="project-card__btn project-card__btn--ghost project-card__btn--disabled" aria-disabled="true">Codigo privado</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
 
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='sass' type='logo' color='#cc6699' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
-                </div>
+                <article class="project-card scroll-element" aria-label="Proyecto Blog de Cafe">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/blog.jpg" alt="Preview del proyecto Blog de Cafe">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">HTML · CSS · JavaScript</p>
+                        <h3 class="project-card__title">Blog de Cafe</h3>
+                        <p class="project-card__description">Sitio editorial con foco en legibilidad, jerarquia visual y rendimiento para contenidos y cursos online.</p>
+                        <div class="project-card__tags" aria-label="Tecnologias usadas">
+                            <span>CSS3</span><span>JavaScript</span><span>HTML5</span>
+                        </div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://blogcafebar.netlify.app" target="_blank" rel="noopener noreferrer">Ver proyecto <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/BlogCafe" target="_blank" rel="noopener noreferrer">Codigo <i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/BienesRaices_Udemy">
-                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-            </div> <!-- FIN DEL LINK -->
+                <article class="project-card scroll-element" aria-label="Proyecto Bienes Raices">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/bienesRaices.jpg" alt="Preview del proyecto Bienes Raices">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Frontend</p>
+                        <h3 class="project-card__title">Bienes Raices</h3>
+                        <p class="project-card__description">Landing inmobiliaria con componentes reutilizables, secciones de alto impacto y estilos escalables con Sass.</p>
+                        <div class="project-card__tags"><span>Sass</span><span>JavaScript</span><span>HTML5</span></div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://inmobiliario.netlify.app" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/BienesRaices_Udemy" target="_blank" rel="noopener noreferrer">Codigo</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="link-web scroll-element">
-                <a href="https://notechnoparty.netlify.app"><img class="imagen-link" src="/build/IMG/festivaldemusica.jpg" alt="Imagen Festival de Musica">Festival de Musica</a>
+                <article class="project-card scroll-element" aria-label="Proyecto Festival de Musica">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/festivaldemusica.jpg" alt="Preview del proyecto Festival de Musica">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Frontend</p>
+                        <h3 class="project-card__title">Festival de Musica</h3>
+                        <p class="project-card__description">Web promocional con identidad visual intensa, secciones animadas y arquitectura responsive de alta conversion.</p>
+                        <div class="project-card__tags"><span>Sass</span><span>JavaScript</span><span>HTML5</span></div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://notechnoparty.netlify.app" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/Festival-Musica_Udemy" target="_blank" rel="noopener noreferrer">Codigo</a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='sass' type='logo' color='#cc6699' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
-                </div>
+                <article class="project-card scroll-element" aria-label="Proyecto App Peluqueria">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/appPeluqueria.jpg" alt="Preview del proyecto App Peluqueria">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Full Stack</p>
+                        <h3 class="project-card__title">App Peluqueria</h3>
+                        <p class="project-card__description">Sistema de reservas con flujos de agenda y gestion de servicios, desarrollado con frontend dinamico y backend en PHP.</p>
+                        <div class="project-card__tags"><span>PHP</span><span>Sass</span><span>JavaScript</span></div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://timesalon.netlify.app" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/AppSalon_Udemy" target="_blank" rel="noopener noreferrer">Codigo</a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/Festival-Musica_Udemy">
-                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-            </div> <!-- FIN DEL LINK -->
+                <article class="project-card scroll-element" aria-label="Proyecto Portfolio Angular">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/PorfolioAngular.jpg" alt="Preview del proyecto Angular">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Angular</p>
+                        <h3 class="project-card__title">Portfolio Angular</h3>
+                        <p class="project-card__description">SPA con enfoque en modularidad, consumo de datos y navegacion fluida en experiencia multiplataforma.</p>
+                        <div class="project-card__tags"><span>Angular</span><span>TypeScript</span><span>CSS3</span></div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://maxangular.netlify.app/#/portfolio" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/PorfolioAngular_FullStack" target="_blank" rel="noopener noreferrer">Codigo</a>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="link-web scroll-element">
-                <a href="https://timesalon.netlify.app"><img class="imagen-link" src="/build/IMG/appPeluqueria.jpg" alt="Imagen App Peluqueria">App Peluqueria</a>
+                <article class="project-card scroll-element" aria-label="Proyecto Morgan Mexican Food">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/MorganBAR.jpg" alt="Preview del proyecto Morgan Mexican Food">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Angular</p>
+                        <h3 class="project-card__title">Morgan Mexican Food</h3>
+                        <p class="project-card__description">Web gastronomica con navegacion por idioma y experiencia visual orientada a marca para captar reservas.</p>
+                        <div class="project-card__tags"><span>Angular</span><span>TypeScript</span><span>JSON</span></div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://morganfood.netlify.app/#/es/home" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/MorganAngular_Freelancer" target="_blank" rel="noopener noreferrer">Codigo</a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='sass' type='logo' color='#cc6699' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
-                    <box-icon name='php' type='logo' color='#777bb4' ></box-icon>
-                </div>
+                <article class="project-card scroll-element" aria-label="Proyecto App Control de Stock">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/appBAR.jpg" alt="Preview del proyecto App Control de Stock">
+                        <span class="project-card__status project-card__status--warm">Code only</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">Full Stack</p>
+                        <h3 class="project-card__title">App Control de Stock</h3>
+                        <p class="project-card__description">Sistema interno para inventario y operaciones comerciales, con reglas de negocio y persistencia de datos.</p>
+                        <div class="project-card__tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span></div>
+                        <div class="project-card__actions">
+                            <span class="project-card__btn project-card__btn--disabled" aria-disabled="true">Demo privada</span>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/ProyectoFinal_PHPyBDD" target="_blank" rel="noopener noreferrer">Codigo</a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/AppSalon_Udemy">
-                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-            </div> <!-- FIN DEL LINK -->
-    
-            <div class="link-web scroll-element">
-                <a href="https://maxangular.netlify.app/#/portfolio"><img class="imagen-link" src="/build/IMG/PorfolioAngular.jpg" alt="Imagen Portfolio Angular">Proyecto Angular</a>
+                <article class="project-card scroll-element" aria-label="Proyecto Miles Cocktail Bar">
+                    <div class="project-card__media">
+                        <img class="imagen-link" src="/build/IMG/MilesBar.jpg" alt="Preview del proyecto Miles Cocktail Bar">
+                        <span class="project-card__status">Live</span>
+                    </div>
+                    <div class="project-card__body">
+                        <p class="project-card__kicker">React</p>
+                        <h3 class="project-card__title">Miles Cocktail Bar</h3>
+                        <p class="project-card__description">Experiencia web para bar premium, enfocada en carta digital, storytelling de marca y rendimiento en mobile.</p>
+                        <div class="project-card__tags"><span>React</span><span>JavaScript</span><span>JSON</span></div>
+                        <div class="project-card__actions">
+                            <a class="project-card__btn" href="https://milesbar.netlify.app/" target="_blank" rel="noopener noreferrer">Ver proyecto</a>
+                            <a class="project-card__btn project-card__btn--ghost" href="https://github.com/MaxDanna26/Miles-Lounge-Bar" target="_blank" rel="noopener noreferrer">Codigo</a>
+                        </div>
+                    </div>
+                </article>
 
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
-                    <box-icon name='angular' type='logo' color='#dd0031' ></box-icon>
-                    <box-icon name='typescript' type='logo' color='#3178c6' ></box-icon>
-                </div>
-
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/PorfolioAngular_FullStack">
-                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-            </div> <!-- FIN DEL LINK -->
-
-            <div class="link-web scroll-element">
-                <a href="https://morganfood.netlify.app/#/es/home"><img class="imagen-link" src="/build/IMG/MorganBAR.jpg" alt="Imagen Morgan Mexican Food">Morgan Mexican Food Restaurant</a>
-
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
-                    <box-icon name='angular' type='logo' color='#dd0031' ></box-icon>
-                    <box-icon name='typescript' type='logo' color='#3178c6' ></box-icon>
-                    <box-icon name='file-json' type='solid' ></box-icon>
-                </div>
-
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/MorganAngular_Freelancer">
-                    <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-            </div> <!-- FIN DEL LINK -->
-        
-            <div class="link-web scroll-element">
-                <a href=""><img class="imagen-link" src="/build/IMG/appBAR.jpg" alt="Imagen de App Stock">App Control de Stock</a>
-
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
-                    <box-icon name='php' type='logo' color='#777bb4' ></box-icon>
-                </div>
-
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/ProyectoFinal_PHPyBDD">
-                        <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-
-            </div> <!-- FIN DEL LINK -->
-        
-            <div class="link-web scroll-element">
-                <a href="https://milesbar.netlify.app/"><img class="imagen-link" src="/build/IMG/MilesBar.jpg" alt="Imagen de Miles Cocktail">Miles Cocktail Bar</a>
-
-                <div class="lenguajes">
-                    <box-icon name='css3' type='logo' color='#1572b6' ></box-icon>
-                    <box-icon name='javascript' type='logo' color='#f7df1e' ></box-icon>
-                    <box-icon name='html5' type='logo' color='#e34f26' ></box-icon>
-                    <box-icon name='react' type='logo' color='#61dafb' ></box-icon>
-                    <box-icon name='file-json' type='solid' ></box-icon>
-                </div>
-
-                <div class="iconosProjects">
-                    <a href="">
-                        <box-icon class="iconoCert" name='error-circle' type='solid' color='#ea0f1e' ></box-icon>
-                    </a>
-                    <a href="https://github.com/MaxDanna26/Miles-Lounge-Bar">
-                        <box-icon class="iconoCert" name='github' type='logo' color='#3e39f3' ></box-icon>
-                    </a>
-                </div>
-
-
-            </div> <!-- FIN DEL LINK -->
-        </div>
+            <section class="projects-closing scroll-element" aria-label="Seccion de cierre">
+                <p class="projects-closing__eyebrow">Ready to Collaborate</p>
+                <h3 class="projects-closing__title">Si te gustaron estos proyectos, hablemos del siguiente</h3>
+                <p class="projects-closing__text">Estoy disponible para colaborar en productos web, rediseños y soluciones a medida con enfoque UX/UI + performance.</p>
+                <a class="projects-closing__btn" href="/HTML/index.html#contact">Contactar ahora <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></a>
+            </section>
+        </main>
 
         <footer class="footer">
-            <div class="seccion-redes">
-                <a href="mailto:maximilianodanna@hotmail.com?subject=Contratarme!&body="><img class="icono-footer" src="/SVG/correo.svg" alt="Icono email"></a>
-    
-                <a href="https://www.instagram.com/maximilianodanna/"><img class="icono-footer" src="/SVG/instagram.svg" alt="Icono Instagram"></a>
-    
-                <a href="https://www.linkedin.com/in/maximiliano-gaspar-danna-67b862266/"><img class="icono-footer" src="/SVG/linkedlin.svg" alt="Icono Linkedlin"></a>
-    
-                <a href="https://www.facebook.com/Max.Danna23"><img class="icono-footer" src="/SVG/facebook.svg" alt="Icono Facebook"></a>
-    
-                <a href="https://github.com/maxdanna26"><img class="icono-footer" src="/SVG/github.svg" alt="Icono Instagram"></a>
-                <a href=""></a>
+            <p class="footer__title">Conectemos</p>
+            <div class="seccion-redes" aria-label="Redes sociales">
+                <a class="footer-link" href="mailto:maximilianodanna@hotmail.com?subject=Contratarme!&body=" aria-label="Enviar email"><img class="icono-footer" src="/SVG/correo.svg" alt=""></a>
+                <a class="footer-link" href="https://www.instagram.com/maximilianodanna/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram"><img class="icono-footer" src="/SVG/instagram.svg" alt=""></a>
+                <a class="footer-link" href="https://www.linkedin.com/in/maximiliano-gaspar-danna-67b862266/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn"><img class="icono-footer" src="/SVG/linkedlin.svg" alt=""></a>
+                <a class="footer-link" href="https://www.facebook.com/Max.Danna23" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook"><img class="icono-footer" src="/SVG/facebook.svg" alt=""></a>
+                <a class="footer-link" href="https://github.com/maxdanna26" target="_blank" rel="noopener noreferrer" aria-label="Abrir GitHub"><img class="icono-footer" src="/SVG/github.svg" alt=""></a>
             </div>
-            </div>
-    
             <p class="copyright">Todos los derechos reservados<span id="year"></span>&copy;</p>
-            <br>
         </footer>
 
     <script src="/SRC/JS/projects.js"></script>
-    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 </body>
 
 </html>
