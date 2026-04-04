@@ -1,104 +1,191 @@
-const nav = document.querySelector("#nav")
-const abrir = document.querySelector("#abrir")
-const cerrar = document.querySelector("#cerrar")
-const boton = document.querySelector("#btn")
-const nosotros = document.querySelector("#nosotros-imagen")
-const btnAbout = document.getElementById("btnAbout")
-const aboutmeP = document.getElementById("aboutmeP")
-const btnOculto = document.getElementById("btnOculto")
+// ===============================
+// utilidades DOM seguras
+// ===============================
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
+const safeOn = (el, type, handler, opts) => el && el.addEventListener(type, handler, opts);
+
+// ===============================
+// nodos
+// ===============================
+const nav = $("#nav");
+const abrir = $("#abrir");
+const cerrar = $("#cerrar");
+const btnContact = $("#btn");                 // si existe
+const nosotrosImg = $("#nosotros-imagen");    // si existe
+const btnAbout = $("#btnAbout");
+const aboutmeP = $("#aboutmeP");
+const btnOculto = $("#btnOculto");            // si existe
+
+// ===============================
+// correo por mailto
+// ===============================
 function enviarCorreo() {
-  // Obtener los valores de los campos del formulario
-  const nombre = document.getElementById('name').value;
-  const subject = document.getElementById('subject').value;
-  const mensaje = document.getElementById('message').value;
-  
-  // Crear el enlace mailto
-  const email = 'maximilianodanna@hotmail.com';
-  const body = `Nombre: ${nombre}\n\nMensaje:\n${mensaje}`;
-  const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  
-  // Abrir el enlace mailto
-  window.location.href = mailtoLink;
+  const nombreEl  = $("#name");
+  const subjectEl = $("#subject");
+  const mensajeEl = $("#message");
+
+  if (!nombreEl || !subjectEl || !mensajeEl) return;
+
+  const nombre  = nombreEl.value.trim();
+  const subject = subjectEl.value.trim();
+  const mensaje = mensajeEl.value.trim();
+
+  // Validación básica para evitar abrir un mailto vacío
+  if (!subject && !mensaje && !nombre) {
+    alert("Por favor, completa al menos un campo antes de enviar.");
+    return;
+  }
+
+  const email = "maximilianodanna@hotmail.com";
+  const body  = `Nombre: ${nombre}\n\nMensaje:\n${mensaje}`;
+  // Importante: usar '&' y no '&amp;' al construir en JS
+  const mailto = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailto;
 }
 
-// Obtiene el año actual
-const año = new Date().getFullYear();
-// Selecciona el elemento <span> con id "year" y actualiza su contenido
-document.getElementById('year').textContent = año;
+// exponemos si tu HTML la llama onsubmit / onclick
+window.enviarCorreo = enviarCorreo;
 
-// Función para alternar una clase en un elemento
-function toggleClass(element, className) {
-  element.classList.toggle(className);
+// ===============================
+// año del footer
+// ===============================
+const yearEl = $("#year");
+if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+// ===============================
+// navegacion responsive (abre/cierra)
+// ===============================
+function toggleNav() {
+  if (!nav || !abrir) return;
+  const isVisible = nav.classList.toggle("visible");
+  // A11Y: sincronizamos estado del botón hamburguesa
+  abrir.setAttribute("aria-expanded", String(isVisible));
 }
-btnAbout.textContent =  "Leer mas ...";
-// Llamo a la funcion para mostrar/ocultar secciones y botón
-btnAbout.addEventListener('click', () => {
-  if(btnAbout.textContent == "Leer menos ...")
-    btnAbout.textContent = "Leer mas ..."
-  else if(btnAbout.textContent == "Leer mas ...")
-    btnAbout.textContent = "Leer menos ...";
-  toggleClass(aboutmeP, "oculto");  
+
+safeOn(abrir, "click", toggleNav);
+safeOn(cerrar, "click", toggleNav);
+
+// Cerrar nav al hacer clic fuera (opcional)
+safeOn(document, "click", (e) => {
+  if (!nav || !abrir) return;
+  const clickDentro = nav.contains(e.target) || abrir.contains(e.target);
+  if (!clickDentro && nav.classList.contains("visible")) {
+    toggleNav();
+  }
 });
 
-// Llamo a la funcion para mostrar/ocultar el menú de navegación
-abrir.addEventListener('click', () => {
-  toggleClass(nav, "visible");
-});
+// ===============================
+// "Leer más" About me (toggle)
+// ===============================
+if (btnAbout && aboutmeP) {
+  // Estados accesibles
+  btnAbout.setAttribute("aria-controls", "aboutmeP");
+  btnAbout.setAttribute("aria-expanded", "false");
+  btnAbout.dataset.state = "collapsed"; // collapsed | expanded
 
-cerrar.addEventListener('click', () => {
-  toggleClass(nav, "visible");
-});
-
-// Funcion para detectar el siguiente elementos a aparecer cuando se hace scroll
-document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('.scroll-element');
-
-  const revealOnScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight * 0.8;
-
-      elements.forEach(element => {
-          if (element.offsetTop < scrollPosition) {
-            element.classList.add('visible');
-          } else {
-              element.classList.remove('visible');
-          }
-      });
+  const updateAboutUI = () => {
+    const expanded = btnAbout.dataset.state === "expanded";
+    btnAbout.textContent = expanded ? "Leer menos…" : "Leer más…";
+    btnAbout.setAttribute("aria-expanded", String(expanded));
+    aboutmeP.classList.toggle("oculto", !expanded); // .oculto { display: none; } en CSS
   };
 
-  window.addEventListener('scroll', revealOnScroll);
-  revealOnScroll(); // Para verificar la visibilidad inicial
-});
+  // Estado inicial
+  updateAboutUI();
 
-const prevButton = document.querySelector('.carousel-control.prev');
-const nextButton = document.querySelector('.carousel-control.next');
-const carouselInner = document.querySelector('.carousel-inner');
+  safeOn(btnAbout, "click", () => {
+    btnAbout.dataset.state = btnAbout.dataset.state === "expanded" ? "collapsed" : "expanded";
+    updateAboutUI();
+  });
+}
+
+// ===============================
+// efecto reveal on scroll (con IntersectionObserver)
+// ===============================
+const revealTargets = $$(".scroll-element");
+
+if (revealTargets.length) {
+  const onEnter = (el) => el.classList.add("visible");
+  const onLeave = (el) => el.classList.remove("visible");
+
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) onEnter(entry.target);
+          else onLeave(entry.target);
+        });
+      },
+      { root: null, rootMargin: "0px 0px -20% 0px", threshold: 0.1 }
+    );
+    revealTargets.forEach((el) => io.observe(el));
+  } else {
+    // Fallback con rAF + throttle
+    const revealOnScroll = () => {
+      const triggerY = window.scrollY + window.innerHeight * 0.8;
+      revealTargets.forEach((el) => {
+        if (el.offsetTop < triggerY) onEnter(el);
+        else onLeave(el);
+      });
+    };
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          revealOnScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    revealOnScroll();
+  }
+}
+
+// ===============================
+// carrusel simple
+// ===============================
+const prevButton = $(".carousel-control.prev");
+const nextButton = $(".carousel-control.next");
+const carouselInner = $(".carousel-inner");
 let currentIndex = 0;
 
-prevButton.addEventListener('click', () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
-});
-
-nextButton.addEventListener('click', () => {
-    if (currentIndex < carouselInner.children.length - 1) {
-        currentIndex++;
-        updateCarousel();
-    }
-});
-
 function updateCarousel() {
-    const offset = -currentIndex * 100;
-    carouselInner.style.transform = `translateX(${offset}%)`;
-    updateOpacity();
+  if (!carouselInner) return;
+  const total = carouselInner.children.length;
+  const clamped = Math.max(0, Math.min(currentIndex, total - 1));
+  if (clamped !== currentIndex) currentIndex = clamped;
+
+  const offset = -currentIndex * 100;
+  carouselInner.style.transform = `translateX(${offset}%)`;
+
+  // opacidad y estado accesible del item activo
+  Array.from(carouselInner.children).forEach((item, index) => {
+    const isActive = index === currentIndex;
+    item.style.opacity = isActive ? "1" : "0.55";
+    item.setAttribute("aria-hidden", String(!isActive));
+    item.setAttribute("aria-current", isActive ? "true" : "false");
+  });
 }
 
-function updateOpacity() {
-    for (let i = 0; i < carouselInner.children.length; i++) {
-        carouselInner.children[i].style.opacity = (i === currentIndex) ? '1' : '0.5';
-    }
+function moveCarousel(direction) {
+  if (!carouselInner) return;
+  currentIndex += direction;
+  updateCarousel();
 }
 
-updateOpacity();
+safeOn(prevButton, "click", () => moveCarousel(-1));
+safeOn(nextButton, "click", () => moveCarousel(1));
+
+safeOn(document, "keydown", (e) => {
+  if (!carouselInner) return;
+  if (e.key === "ArrowLeft") moveCarousel(-1);
+  if (e.key === "ArrowRight") moveCarousel(1);
+});
+
+if (carouselInner) {
+  updateCarousel();
+}
