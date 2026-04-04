@@ -1,4 +1,4 @@
-# Portfolio Personal · Maximiliano Danna
+# Portfolio Personal · Max Danna
 
 Portfolio web personal enfocado en mostrar proyectos reales, experiencia profesional y propuesta de valor como desarrollador Full Stack con foco en UX/UI.
 
